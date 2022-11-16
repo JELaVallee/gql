@@ -1,22 +1,42 @@
 query HeroWithFragments($first: Int) {
   hero(episode: JEDI) {
-    ...comparisonFields
-  }
-}
+    ...characterFields
+    ## FAIL - These fail to resolve fields on Interface extended Type
+    # ...humanFields
+    # ...droidFields
 
-fragment heroData on Character {
-  name
-}
-
-fragment comparisonFields on Character {
-  id
-  ...heroData
-  friendsConnection(first: $first) {
-    totalCount
-    edges {
-      node {
-        ...heroData
-      }
+    ## PASS - This is fine if the fragment is in-line
+    ... on Human {
+      homePlanet
+    }
+    ... on Droid {
+      primaryFunction
     }
   }
+}
+
+fragment humanFields on Human {
+  ## FAIL - Type-specific field fails
+  homePlanet
+
+  ## PASS - Interface-defined field resolves
+  # appearsIn
+}
+
+fragment droidFields on Droid {
+  ## FAIL - Type-specific field fails
+  primaryFunction
+}
+
+fragment characterFields on Character {
+  id
+  name
+
+  ## FAIL - These fail when referenced in the fragment, even tho they're in-line
+  # ... on Droid {
+  #   primaryFunction
+  # }
+  # ... on Human {
+  #   homePlanet
+  # }
 }

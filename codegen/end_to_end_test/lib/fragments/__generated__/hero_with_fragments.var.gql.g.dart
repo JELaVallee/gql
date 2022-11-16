@@ -8,10 +8,12 @@ part of 'hero_with_fragments.var.gql.dart';
 
 Serializer<GHeroWithFragmentsVars> _$gHeroWithFragmentsVarsSerializer =
     new _$GHeroWithFragmentsVarsSerializer();
-Serializer<GheroDataVars> _$gheroDataVarsSerializer =
-    new _$GheroDataVarsSerializer();
-Serializer<GcomparisonFieldsVars> _$gcomparisonFieldsVarsSerializer =
-    new _$GcomparisonFieldsVarsSerializer();
+Serializer<GhumanFieldsVars> _$ghumanFieldsVarsSerializer =
+    new _$GhumanFieldsVarsSerializer();
+Serializer<GdroidFieldsVars> _$gdroidFieldsVarsSerializer =
+    new _$GdroidFieldsVarsSerializer();
+Serializer<GcharacterFieldsVars> _$gcharacterFieldsVarsSerializer =
+    new _$GcharacterFieldsVarsSerializer();
 
 class _$GHeroWithFragmentsVarsSerializer
     implements StructuredSerializer<GHeroWithFragmentsVars> {
@@ -61,71 +63,70 @@ class _$GHeroWithFragmentsVarsSerializer
   }
 }
 
-class _$GheroDataVarsSerializer implements StructuredSerializer<GheroDataVars> {
+class _$GhumanFieldsVarsSerializer
+    implements StructuredSerializer<GhumanFieldsVars> {
   @override
-  final Iterable<Type> types = const [GheroDataVars, _$GheroDataVars];
+  final Iterable<Type> types = const [GhumanFieldsVars, _$GhumanFieldsVars];
   @override
-  final String wireName = 'GheroDataVars';
+  final String wireName = 'GhumanFieldsVars';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GheroDataVars object,
+  Iterable<Object?> serialize(Serializers serializers, GhumanFieldsVars object,
       {FullType specifiedType = FullType.unspecified}) {
     return <Object?>[];
   }
 
   @override
-  GheroDataVars deserialize(
+  GhumanFieldsVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GheroDataVarsBuilder().build();
+    return new GhumanFieldsVarsBuilder().build();
   }
 }
 
-class _$GcomparisonFieldsVarsSerializer
-    implements StructuredSerializer<GcomparisonFieldsVars> {
+class _$GdroidFieldsVarsSerializer
+    implements StructuredSerializer<GdroidFieldsVars> {
   @override
-  final Iterable<Type> types = const [
-    GcomparisonFieldsVars,
-    _$GcomparisonFieldsVars
-  ];
+  final Iterable<Type> types = const [GdroidFieldsVars, _$GdroidFieldsVars];
   @override
-  final String wireName = 'GcomparisonFieldsVars';
+  final String wireName = 'GdroidFieldsVars';
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GcomparisonFieldsVars object,
+  Iterable<Object?> serialize(Serializers serializers, GdroidFieldsVars object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.first;
-    if (value != null) {
-      result
-        ..add('first')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
-    return result;
+    return <Object?>[];
   }
 
   @override
-  GcomparisonFieldsVars deserialize(
+  GdroidFieldsVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GcomparisonFieldsVarsBuilder();
+    return new GdroidFieldsVarsBuilder().build();
+  }
+}
 
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'first':
-          result.first = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
-          break;
-      }
-    }
+class _$GcharacterFieldsVarsSerializer
+    implements StructuredSerializer<GcharacterFieldsVars> {
+  @override
+  final Iterable<Type> types = const [
+    GcharacterFieldsVars,
+    _$GcharacterFieldsVars
+  ];
+  @override
+  final String wireName = 'GcharacterFieldsVars';
 
-    return result.build();
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GcharacterFieldsVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GcharacterFieldsVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GcharacterFieldsVarsBuilder().build();
   }
 }
 
@@ -207,136 +208,179 @@ class GHeroWithFragmentsVarsBuilder
   }
 }
 
-class _$GheroDataVars extends GheroDataVars {
-  factory _$GheroDataVars([void Function(GheroDataVarsBuilder)? updates]) =>
-      (new GheroDataVarsBuilder()..update(updates))._build();
+class _$GhumanFieldsVars extends GhumanFieldsVars {
+  factory _$GhumanFieldsVars(
+          [void Function(GhumanFieldsVarsBuilder)? updates]) =>
+      (new GhumanFieldsVarsBuilder()..update(updates))._build();
 
-  _$GheroDataVars._() : super._();
+  _$GhumanFieldsVars._() : super._();
 
   @override
-  GheroDataVars rebuild(void Function(GheroDataVarsBuilder) updates) =>
+  GhumanFieldsVars rebuild(void Function(GhumanFieldsVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GheroDataVarsBuilder toBuilder() => new GheroDataVarsBuilder()..replace(this);
+  GhumanFieldsVarsBuilder toBuilder() =>
+      new GhumanFieldsVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GheroDataVars;
+    return other is GhumanFieldsVars;
   }
 
   @override
   int get hashCode {
-    return 172200517;
+    return 468302555;
   }
 
   @override
   String toString() {
-    return newBuiltValueToStringHelper(r'GheroDataVars').toString();
+    return newBuiltValueToStringHelper(r'GhumanFieldsVars').toString();
   }
 }
 
-class GheroDataVarsBuilder
-    implements Builder<GheroDataVars, GheroDataVarsBuilder> {
-  _$GheroDataVars? _$v;
+class GhumanFieldsVarsBuilder
+    implements Builder<GhumanFieldsVars, GhumanFieldsVarsBuilder> {
+  _$GhumanFieldsVars? _$v;
 
-  GheroDataVarsBuilder();
+  GhumanFieldsVarsBuilder();
 
   @override
-  void replace(GheroDataVars other) {
+  void replace(GhumanFieldsVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GheroDataVars;
+    _$v = other as _$GhumanFieldsVars;
   }
 
   @override
-  void update(void Function(GheroDataVarsBuilder)? updates) {
+  void update(void Function(GhumanFieldsVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GheroDataVars build() => _build();
+  GhumanFieldsVars build() => _build();
 
-  _$GheroDataVars _build() {
-    final _$result = _$v ?? new _$GheroDataVars._();
+  _$GhumanFieldsVars _build() {
+    final _$result = _$v ?? new _$GhumanFieldsVars._();
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GcomparisonFieldsVars extends GcomparisonFieldsVars {
-  @override
-  final int? first;
+class _$GdroidFieldsVars extends GdroidFieldsVars {
+  factory _$GdroidFieldsVars(
+          [void Function(GdroidFieldsVarsBuilder)? updates]) =>
+      (new GdroidFieldsVarsBuilder()..update(updates))._build();
 
-  factory _$GcomparisonFieldsVars(
-          [void Function(GcomparisonFieldsVarsBuilder)? updates]) =>
-      (new GcomparisonFieldsVarsBuilder()..update(updates))._build();
-
-  _$GcomparisonFieldsVars._({this.first}) : super._();
+  _$GdroidFieldsVars._() : super._();
 
   @override
-  GcomparisonFieldsVars rebuild(
-          void Function(GcomparisonFieldsVarsBuilder) updates) =>
+  GdroidFieldsVars rebuild(void Function(GdroidFieldsVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GcomparisonFieldsVarsBuilder toBuilder() =>
-      new GcomparisonFieldsVarsBuilder()..replace(this);
+  GdroidFieldsVarsBuilder toBuilder() =>
+      new GdroidFieldsVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GcomparisonFieldsVars && first == other.first;
+    return other is GdroidFieldsVars;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, first.hashCode));
+    return 728138042;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GcomparisonFieldsVars')
-          ..add('first', first))
-        .toString();
+    return newBuiltValueToStringHelper(r'GdroidFieldsVars').toString();
   }
 }
 
-class GcomparisonFieldsVarsBuilder
-    implements Builder<GcomparisonFieldsVars, GcomparisonFieldsVarsBuilder> {
-  _$GcomparisonFieldsVars? _$v;
+class GdroidFieldsVarsBuilder
+    implements Builder<GdroidFieldsVars, GdroidFieldsVarsBuilder> {
+  _$GdroidFieldsVars? _$v;
 
-  int? _first;
-  int? get first => _$this._first;
-  set first(int? first) => _$this._first = first;
-
-  GcomparisonFieldsVarsBuilder();
-
-  GcomparisonFieldsVarsBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _first = $v.first;
-      _$v = null;
-    }
-    return this;
-  }
+  GdroidFieldsVarsBuilder();
 
   @override
-  void replace(GcomparisonFieldsVars other) {
+  void replace(GdroidFieldsVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GcomparisonFieldsVars;
+    _$v = other as _$GdroidFieldsVars;
   }
 
   @override
-  void update(void Function(GcomparisonFieldsVarsBuilder)? updates) {
+  void update(void Function(GdroidFieldsVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GcomparisonFieldsVars build() => _build();
+  GdroidFieldsVars build() => _build();
 
-  _$GcomparisonFieldsVars _build() {
-    final _$result = _$v ?? new _$GcomparisonFieldsVars._(first: first);
+  _$GdroidFieldsVars _build() {
+    final _$result = _$v ?? new _$GdroidFieldsVars._();
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GcharacterFieldsVars extends GcharacterFieldsVars {
+  factory _$GcharacterFieldsVars(
+          [void Function(GcharacterFieldsVarsBuilder)? updates]) =>
+      (new GcharacterFieldsVarsBuilder()..update(updates))._build();
+
+  _$GcharacterFieldsVars._() : super._();
+
+  @override
+  GcharacterFieldsVars rebuild(
+          void Function(GcharacterFieldsVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GcharacterFieldsVarsBuilder toBuilder() =>
+      new GcharacterFieldsVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GcharacterFieldsVars;
+  }
+
+  @override
+  int get hashCode {
+    return 398844952;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GcharacterFieldsVars').toString();
+  }
+}
+
+class GcharacterFieldsVarsBuilder
+    implements Builder<GcharacterFieldsVars, GcharacterFieldsVarsBuilder> {
+  _$GcharacterFieldsVars? _$v;
+
+  GcharacterFieldsVarsBuilder();
+
+  @override
+  void replace(GcharacterFieldsVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GcharacterFieldsVars;
+  }
+
+  @override
+  void update(void Function(GcharacterFieldsVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GcharacterFieldsVars build() => _build();
+
+  _$GcharacterFieldsVars _build() {
+    final _$result = _$v ?? new _$GcharacterFieldsVars._();
     replace(_$result);
     return _$result;
   }

@@ -32,24 +32,58 @@ const HeroWithFragments = _i1.OperationDefinitionNode(
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
         _i1.FragmentSpreadNode(
-          name: _i1.NameNode(value: 'comparisonFields'),
+          name: _i1.NameNode(value: 'characterFields'),
           directives: [],
-        )
+        ),
+        _i1.InlineFragmentNode(
+          typeCondition: _i1.TypeConditionNode(
+              on: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Human'),
+            isNonNull: false,
+          )),
+          directives: [],
+          selectionSet: _i1.SelectionSetNode(selections: [
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'homePlanet'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            )
+          ]),
+        ),
+        _i1.InlineFragmentNode(
+          typeCondition: _i1.TypeConditionNode(
+              on: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Droid'),
+            isNonNull: false,
+          )),
+          directives: [],
+          selectionSet: _i1.SelectionSetNode(selections: [
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'primaryFunction'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            )
+          ]),
+        ),
       ]),
     )
   ]),
 );
-const heroData = _i1.FragmentDefinitionNode(
-  name: _i1.NameNode(value: 'heroData'),
+const humanFields = _i1.FragmentDefinitionNode(
+  name: _i1.NameNode(value: 'humanFields'),
   typeCondition: _i1.TypeConditionNode(
       on: _i1.NamedTypeNode(
-    name: _i1.NameNode(value: 'Character'),
+    name: _i1.NameNode(value: 'Human'),
     isNonNull: false,
   )),
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
     _i1.FieldNode(
-      name: _i1.NameNode(value: 'name'),
+      name: _i1.NameNode(value: 'homePlanet'),
       alias: null,
       arguments: [],
       directives: [],
@@ -57,8 +91,26 @@ const heroData = _i1.FragmentDefinitionNode(
     )
   ]),
 );
-const comparisonFields = _i1.FragmentDefinitionNode(
-  name: _i1.NameNode(value: 'comparisonFields'),
+const droidFields = _i1.FragmentDefinitionNode(
+  name: _i1.NameNode(value: 'droidFields'),
+  typeCondition: _i1.TypeConditionNode(
+      on: _i1.NamedTypeNode(
+    name: _i1.NameNode(value: 'Droid'),
+    isNonNull: false,
+  )),
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'primaryFunction'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: null,
+    )
+  ]),
+);
+const characterFields = _i1.FragmentDefinitionNode(
+  name: _i1.NameNode(value: 'characterFields'),
   typeCondition: _i1.TypeConditionNode(
       on: _i1.NamedTypeNode(
     name: _i1.NameNode(value: 'Character'),
@@ -73,54 +125,18 @@ const comparisonFields = _i1.FragmentDefinitionNode(
       directives: [],
       selectionSet: null,
     ),
-    _i1.FragmentSpreadNode(
-      name: _i1.NameNode(value: 'heroData'),
-      directives: [],
-    ),
     _i1.FieldNode(
-      name: _i1.NameNode(value: 'friendsConnection'),
+      name: _i1.NameNode(value: 'name'),
       alias: null,
-      arguments: [
-        _i1.ArgumentNode(
-          name: _i1.NameNode(value: 'first'),
-          value: _i1.VariableNode(name: _i1.NameNode(value: 'first')),
-        )
-      ],
+      arguments: [],
       directives: [],
-      selectionSet: _i1.SelectionSetNode(selections: [
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'totalCount'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'edges'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'node'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: _i1.SelectionSetNode(selections: [
-                _i1.FragmentSpreadNode(
-                  name: _i1.NameNode(value: 'heroData'),
-                  directives: [],
-                )
-              ]),
-            )
-          ]),
-        ),
-      ]),
+      selectionSet: null,
     ),
   ]),
 );
 const document = _i1.DocumentNode(definitions: [
   HeroWithFragments,
-  heroData,
-  comparisonFields,
+  humanFields,
+  droidFields,
+  characterFields,
 ]);
