@@ -5,26 +5,21 @@ query HeroWithFragments($first: Int) {
     # ...humanFields
     # ...droidFields
 
-    ## PASS - This is fine if the fragment is in-line
-    ... on Human {
-      homePlanet
-    }
-    ... on Droid {
-      primaryFunction
-    }
+    ## PASS - This is fine if the fragment nest in and in-line that is a TypedNode
+    # ... on Human {
+    #    ...humanFields
+    # }
+    # ... on Droid {
+    #   ...droidFields
+    # }
   }
 }
 
 fragment humanFields on Human {
-  ## FAIL - Type-specific field fails
   homePlanet
-
-  ## PASS - Interface-defined field resolves
-  # appearsIn
 }
 
 fragment droidFields on Droid {
-  ## FAIL - Type-specific field fails
   primaryFunction
 }
 
@@ -32,10 +27,12 @@ fragment characterFields on Character {
   id
   name
 
-  ## FAIL - These fail when referenced in the fragment, even tho they're in-line
+  #### THIS IS OUR CORE BUG ####
+  ## FAIL - This fails even as an in-line fragment referencing a TypedNode fragment
   # ... on Droid {
-  #   primaryFunction
+  #   ...droidFields
   # }
+  ## FAIL - This fails even as an in-line fragment w/ just Typed field ref
   # ... on Human {
   #   homePlanet
   # }

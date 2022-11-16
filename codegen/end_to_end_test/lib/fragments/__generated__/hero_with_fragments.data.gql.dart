@@ -6,8 +6,6 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:end_to_end_test/graphql/__generated__/serializers.gql.dart'
     as _i1;
-import 'package:gql_code_builder/src/serializers/inline_fragment_serializer.dart'
-    as _i2;
 
 part 'hero_with_fragments.data.gql.g.dart';
 
@@ -37,47 +35,17 @@ abstract class GHeroWithFragmentsData
       );
 }
 
-abstract class GHeroWithFragmentsData_hero implements GcharacterFields {
-  @override
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  @override
-  String get id;
-  @override
-  String get name;
-  static Serializer<GHeroWithFragmentsData_hero> get serializer =>
-      _i2.InlineFragmentSerializer<GHeroWithFragmentsData_hero>(
-        'GHeroWithFragmentsData_hero',
-        GHeroWithFragmentsData_hero__base,
-        {
-          'Human': GHeroWithFragmentsData_hero__asHuman,
-          'Droid': GHeroWithFragmentsData_hero__asDroid,
-        },
-      );
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GHeroWithFragmentsData_hero.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GHeroWithFragmentsData_hero? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GHeroWithFragmentsData_hero.serializer,
-        json,
-      );
-}
-
-abstract class GHeroWithFragmentsData_hero__base
+abstract class GHeroWithFragmentsData_hero
     implements
-        Built<GHeroWithFragmentsData_hero__base,
-            GHeroWithFragmentsData_hero__baseBuilder>,
-        GHeroWithFragmentsData_hero,
+        Built<GHeroWithFragmentsData_hero, GHeroWithFragmentsData_heroBuilder>,
         GcharacterFields {
-  GHeroWithFragmentsData_hero__base._();
+  GHeroWithFragmentsData_hero._();
 
-  factory GHeroWithFragmentsData_hero__base(
-          [Function(GHeroWithFragmentsData_hero__baseBuilder b) updates]) =
-      _$GHeroWithFragmentsData_hero__base;
+  factory GHeroWithFragmentsData_hero(
+          [Function(GHeroWithFragmentsData_heroBuilder b) updates]) =
+      _$GHeroWithFragmentsData_hero;
 
-  static void _initializeBuilder(GHeroWithFragmentsData_hero__baseBuilder b) =>
+  static void _initializeBuilder(GHeroWithFragmentsData_heroBuilder b) =>
       b..G__typename = 'Character';
   @override
   @BuiltValueField(wireName: '__typename')
@@ -86,93 +54,16 @@ abstract class GHeroWithFragmentsData_hero__base
   String get id;
   @override
   String get name;
-  static Serializer<GHeroWithFragmentsData_hero__base> get serializer =>
-      _$gHeroWithFragmentsDataHeroBaseSerializer;
+  static Serializer<GHeroWithFragmentsData_hero> get serializer =>
+      _$gHeroWithFragmentsDataHeroSerializer;
   @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GHeroWithFragmentsData_hero__base.serializer,
+        GHeroWithFragmentsData_hero.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GHeroWithFragmentsData_hero__base? fromJson(
-          Map<String, dynamic> json) =>
+  static GHeroWithFragmentsData_hero? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GHeroWithFragmentsData_hero__base.serializer,
-        json,
-      );
-}
-
-abstract class GHeroWithFragmentsData_hero__asHuman
-    implements
-        Built<GHeroWithFragmentsData_hero__asHuman,
-            GHeroWithFragmentsData_hero__asHumanBuilder>,
-        GHeroWithFragmentsData_hero,
-        GcharacterFields {
-  GHeroWithFragmentsData_hero__asHuman._();
-
-  factory GHeroWithFragmentsData_hero__asHuman(
-          [Function(GHeroWithFragmentsData_hero__asHumanBuilder b) updates]) =
-      _$GHeroWithFragmentsData_hero__asHuman;
-
-  static void _initializeBuilder(
-          GHeroWithFragmentsData_hero__asHumanBuilder b) =>
-      b..G__typename = 'Human';
-  @override
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  @override
-  String get id;
-  @override
-  String get name;
-  String? get homePlanet;
-  static Serializer<GHeroWithFragmentsData_hero__asHuman> get serializer =>
-      _$gHeroWithFragmentsDataHeroAsHumanSerializer;
-  @override
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GHeroWithFragmentsData_hero__asHuman.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GHeroWithFragmentsData_hero__asHuman? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GHeroWithFragmentsData_hero__asHuman.serializer,
-        json,
-      );
-}
-
-abstract class GHeroWithFragmentsData_hero__asDroid
-    implements
-        Built<GHeroWithFragmentsData_hero__asDroid,
-            GHeroWithFragmentsData_hero__asDroidBuilder>,
-        GHeroWithFragmentsData_hero,
-        GcharacterFields {
-  GHeroWithFragmentsData_hero__asDroid._();
-
-  factory GHeroWithFragmentsData_hero__asDroid(
-          [Function(GHeroWithFragmentsData_hero__asDroidBuilder b) updates]) =
-      _$GHeroWithFragmentsData_hero__asDroid;
-
-  static void _initializeBuilder(
-          GHeroWithFragmentsData_hero__asDroidBuilder b) =>
-      b..G__typename = 'Droid';
-  @override
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  @override
-  String get id;
-  @override
-  String get name;
-  String? get primaryFunction;
-  static Serializer<GHeroWithFragmentsData_hero__asDroid> get serializer =>
-      _$gHeroWithFragmentsDataHeroAsDroidSerializer;
-  @override
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GHeroWithFragmentsData_hero__asDroid.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GHeroWithFragmentsData_hero__asDroid? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GHeroWithFragmentsData_hero__asDroid.serializer,
+        GHeroWithFragmentsData_hero.serializer,
         json,
       );
 }

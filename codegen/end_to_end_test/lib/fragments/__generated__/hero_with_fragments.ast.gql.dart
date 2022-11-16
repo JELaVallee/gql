@@ -34,41 +34,7 @@ const HeroWithFragments = _i1.OperationDefinitionNode(
         _i1.FragmentSpreadNode(
           name: _i1.NameNode(value: 'characterFields'),
           directives: [],
-        ),
-        _i1.InlineFragmentNode(
-          typeCondition: _i1.TypeConditionNode(
-              on: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'Human'),
-            isNonNull: false,
-          )),
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'homePlanet'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            )
-          ]),
-        ),
-        _i1.InlineFragmentNode(
-          typeCondition: _i1.TypeConditionNode(
-              on: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'Droid'),
-            isNonNull: false,
-          )),
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'primaryFunction'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            )
-          ]),
-        ),
+        )
       ]),
     )
   ]),
