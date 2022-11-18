@@ -2,13 +2,13 @@ query HeroWithFragments($first: Int) {
   hero(episode: JEDI) {
     ...characterFields
     ## FAIL - These fail to resolve fields on Interface extended Type
-    ...humanFields
+    # ...humanFields
     # ...droidFields
 
     ## PASS - This is fine if the fragment nest in and in-line that is a TypedNode
-    # ... on Human {
-    #    ...humanFields
-    # }
+    ... on Human {
+       ...humanFields
+    }
     # ... on Droid {
     #   ...droidFields
     # }

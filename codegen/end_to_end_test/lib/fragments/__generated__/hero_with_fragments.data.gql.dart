@@ -6,6 +6,8 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:end_to_end_test/graphql/__generated__/serializers.gql.dart'
     as _i1;
+import 'package:gql_code_builder/src/serializers/inline_fragment_serializer.dart'
+    as _i2;
 
 part 'hero_with_fragments.data.gql.g.dart';
 
@@ -35,18 +37,7 @@ abstract class GHeroWithFragmentsData
       );
 }
 
-abstract class GHeroWithFragmentsData_hero
-    implements
-        Built<GHeroWithFragmentsData_hero, GHeroWithFragmentsData_heroBuilder>,
-        GcharacterFields {
-  GHeroWithFragmentsData_hero._();
-
-  factory GHeroWithFragmentsData_hero(
-          [Function(GHeroWithFragmentsData_heroBuilder b) updates]) =
-      _$GHeroWithFragmentsData_hero;
-
-  static void _initializeBuilder(GHeroWithFragmentsData_heroBuilder b) =>
-      b..G__typename = 'Character';
+abstract class GHeroWithFragmentsData_hero implements GcharacterFields {
   @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
@@ -55,8 +46,11 @@ abstract class GHeroWithFragmentsData_hero
   @override
   String get name;
   static Serializer<GHeroWithFragmentsData_hero> get serializer =>
-      _$gHeroWithFragmentsDataHeroSerializer;
-  @override
+      _i2.InlineFragmentSerializer<GHeroWithFragmentsData_hero>(
+        'GHeroWithFragmentsData_hero',
+        GHeroWithFragmentsData_hero__base,
+        {'Human': GHeroWithFragmentsData_hero__asHuman},
+      );
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GHeroWithFragmentsData_hero.serializer,
         this,
@@ -64,6 +58,82 @@ abstract class GHeroWithFragmentsData_hero
   static GHeroWithFragmentsData_hero? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GHeroWithFragmentsData_hero.serializer,
+        json,
+      );
+}
+
+abstract class GHeroWithFragmentsData_hero__base
+    implements
+        Built<GHeroWithFragmentsData_hero__base,
+            GHeroWithFragmentsData_hero__baseBuilder>,
+        GHeroWithFragmentsData_hero,
+        GcharacterFields {
+  GHeroWithFragmentsData_hero__base._();
+
+  factory GHeroWithFragmentsData_hero__base(
+          [Function(GHeroWithFragmentsData_hero__baseBuilder b) updates]) =
+      _$GHeroWithFragmentsData_hero__base;
+
+  static void _initializeBuilder(GHeroWithFragmentsData_hero__baseBuilder b) =>
+      b..G__typename = 'Character';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  String get id;
+  @override
+  String get name;
+  static Serializer<GHeroWithFragmentsData_hero__base> get serializer =>
+      _$gHeroWithFragmentsDataHeroBaseSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GHeroWithFragmentsData_hero__base.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GHeroWithFragmentsData_hero__base? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GHeroWithFragmentsData_hero__base.serializer,
+        json,
+      );
+}
+
+abstract class GHeroWithFragmentsData_hero__asHuman
+    implements
+        Built<GHeroWithFragmentsData_hero__asHuman,
+            GHeroWithFragmentsData_hero__asHumanBuilder>,
+        GHeroWithFragmentsData_hero,
+        GcharacterFields,
+        GhumanFields {
+  GHeroWithFragmentsData_hero__asHuman._();
+
+  factory GHeroWithFragmentsData_hero__asHuman(
+          [Function(GHeroWithFragmentsData_hero__asHumanBuilder b) updates]) =
+      _$GHeroWithFragmentsData_hero__asHuman;
+
+  static void _initializeBuilder(
+          GHeroWithFragmentsData_hero__asHumanBuilder b) =>
+      b..G__typename = 'Human';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
+  String? get homePlanet;
+  static Serializer<GHeroWithFragmentsData_hero__asHuman> get serializer =>
+      _$gHeroWithFragmentsDataHeroAsHumanSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GHeroWithFragmentsData_hero__asHuman.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GHeroWithFragmentsData_hero__asHuman? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GHeroWithFragmentsData_hero__asHuman.serializer,
         json,
       );
 }
