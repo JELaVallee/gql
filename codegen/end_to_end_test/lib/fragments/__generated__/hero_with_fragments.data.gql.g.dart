@@ -8,17 +8,18 @@ part of 'hero_with_fragments.data.gql.dart';
 
 Serializer<GHeroWithFragmentsData> _$gHeroWithFragmentsDataSerializer =
     new _$GHeroWithFragmentsDataSerializer();
-Serializer<GHeroWithFragmentsData_hero> _$gHeroWithFragmentsDataHeroSerializer =
-    new _$GHeroWithFragmentsData_heroSerializer();
+Serializer<GHeroWithFragmentsData_hero__base>
+    _$gHeroWithFragmentsDataHeroBaseSerializer =
+    new _$GHeroWithFragmentsData_hero__baseSerializer();
+Serializer<GHeroWithFragmentsData_hero__asHuman>
+    _$gHeroWithFragmentsDataHeroAsHumanSerializer =
+    new _$GHeroWithFragmentsData_hero__asHumanSerializer();
 Serializer<GhumanFieldsData> _$ghumanFieldsDataSerializer =
     new _$GhumanFieldsDataSerializer();
 Serializer<GdroidFieldsData> _$gdroidFieldsDataSerializer =
     new _$GdroidFieldsDataSerializer();
-Serializer<GcharacterFieldsData__base> _$gcharacterFieldsDataBaseSerializer =
-    new _$GcharacterFieldsData__baseSerializer();
-Serializer<GcharacterFieldsData__asHuman>
-    _$gcharacterFieldsDataAsHumanSerializer =
-    new _$GcharacterFieldsData__asHumanSerializer();
+Serializer<GcharacterFieldsData> _$gcharacterFieldsDataSerializer =
+    new _$GcharacterFieldsDataSerializer();
 
 class _$GHeroWithFragmentsDataSerializer
     implements StructuredSerializer<GHeroWithFragmentsData> {
@@ -67,9 +68,9 @@ class _$GHeroWithFragmentsDataSerializer
               specifiedType: const FullType(String))! as String;
           break;
         case 'hero':
-          result.hero.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GHeroWithFragmentsData_hero))!
-              as GHeroWithFragmentsData_hero);
+          result.hero = serializers.deserialize(value,
+                  specifiedType: const FullType(GHeroWithFragmentsData_hero))
+              as GHeroWithFragmentsData_hero?;
           break;
       }
     }
@@ -78,19 +79,19 @@ class _$GHeroWithFragmentsDataSerializer
   }
 }
 
-class _$GHeroWithFragmentsData_heroSerializer
-    implements StructuredSerializer<GHeroWithFragmentsData_hero> {
+class _$GHeroWithFragmentsData_hero__baseSerializer
+    implements StructuredSerializer<GHeroWithFragmentsData_hero__base> {
   @override
   final Iterable<Type> types = const [
-    GHeroWithFragmentsData_hero,
-    _$GHeroWithFragmentsData_hero
+    GHeroWithFragmentsData_hero__base,
+    _$GHeroWithFragmentsData_hero__base
   ];
   @override
-  final String wireName = 'GHeroWithFragmentsData_hero';
+  final String wireName = 'GHeroWithFragmentsData_hero__base';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GHeroWithFragmentsData_hero object,
+      Serializers serializers, GHeroWithFragmentsData_hero__base object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -106,10 +107,10 @@ class _$GHeroWithFragmentsData_heroSerializer
   }
 
   @override
-  GHeroWithFragmentsData_hero deserialize(
+  GHeroWithFragmentsData_hero__base deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GHeroWithFragmentsData_heroBuilder();
+    final result = new GHeroWithFragmentsData_hero__baseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -128,6 +129,75 @@ class _$GHeroWithFragmentsData_heroSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GHeroWithFragmentsData_hero__asHumanSerializer
+    implements StructuredSerializer<GHeroWithFragmentsData_hero__asHuman> {
+  @override
+  final Iterable<Type> types = const [
+    GHeroWithFragmentsData_hero__asHuman,
+    _$GHeroWithFragmentsData_hero__asHuman
+  ];
+  @override
+  final String wireName = 'GHeroWithFragmentsData_hero__asHuman';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GHeroWithFragmentsData_hero__asHuman object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.homePlanet;
+    if (value != null) {
+      result
+        ..add('homePlanet')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GHeroWithFragmentsData_hero__asHuman deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GHeroWithFragmentsData_hero__asHumanBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'homePlanet':
+          result.homePlanet = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -242,19 +312,19 @@ class _$GdroidFieldsDataSerializer
   }
 }
 
-class _$GcharacterFieldsData__baseSerializer
-    implements StructuredSerializer<GcharacterFieldsData__base> {
+class _$GcharacterFieldsDataSerializer
+    implements StructuredSerializer<GcharacterFieldsData> {
   @override
   final Iterable<Type> types = const [
-    GcharacterFieldsData__base,
-    _$GcharacterFieldsData__base
+    GcharacterFieldsData,
+    _$GcharacterFieldsData
   ];
   @override
-  final String wireName = 'GcharacterFieldsData__base';
+  final String wireName = 'GcharacterFieldsData';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GcharacterFieldsData__base object,
+      Serializers serializers, GcharacterFieldsData object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -270,10 +340,10 @@ class _$GcharacterFieldsData__baseSerializer
   }
 
   @override
-  GcharacterFieldsData__base deserialize(
+  GcharacterFieldsData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GcharacterFieldsData__baseBuilder();
+    final result = new GcharacterFieldsDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -292,75 +362,6 @@ class _$GcharacterFieldsData__baseSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GcharacterFieldsData__asHumanSerializer
-    implements StructuredSerializer<GcharacterFieldsData__asHuman> {
-  @override
-  final Iterable<Type> types = const [
-    GcharacterFieldsData__asHuman,
-    _$GcharacterFieldsData__asHuman
-  ];
-  @override
-  final String wireName = 'GcharacterFieldsData__asHuman';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GcharacterFieldsData__asHuman object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-      'name',
-      serializers.serialize(object.name, specifiedType: const FullType(String)),
-    ];
-    Object? value;
-    value = object.homePlanet;
-    if (value != null) {
-      result
-        ..add('homePlanet')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
-
-  @override
-  GcharacterFieldsData__asHuman deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GcharacterFieldsData__asHumanBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'name':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'homePlanet':
-          result.homePlanet = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -424,10 +425,9 @@ class GHeroWithFragmentsDataBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  GHeroWithFragmentsData_heroBuilder? _hero;
-  GHeroWithFragmentsData_heroBuilder get hero =>
-      _$this._hero ??= new GHeroWithFragmentsData_heroBuilder();
-  set hero(GHeroWithFragmentsData_heroBuilder? hero) => _$this._hero = hero;
+  GHeroWithFragmentsData_hero? _hero;
+  GHeroWithFragmentsData_hero? get hero => _$this._hero;
+  set hero(GHeroWithFragmentsData_hero? hero) => _$this._hero = hero;
 
   GHeroWithFragmentsDataBuilder() {
     GHeroWithFragmentsData._initializeBuilder(this);
@@ -437,7 +437,7 @@ class GHeroWithFragmentsDataBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _hero = $v.hero?.toBuilder();
+      _hero = $v.hero;
       _$v = null;
     }
     return this;
@@ -458,30 +458,18 @@ class GHeroWithFragmentsDataBuilder
   GHeroWithFragmentsData build() => _build();
 
   _$GHeroWithFragmentsData _build() {
-    _$GHeroWithFragmentsData _$result;
-    try {
-      _$result = _$v ??
-          new _$GHeroWithFragmentsData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GHeroWithFragmentsData', 'G__typename'),
-              hero: _hero?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'hero';
-        _hero?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GHeroWithFragmentsData', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$GHeroWithFragmentsData._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GHeroWithFragmentsData', 'G__typename'),
+            hero: hero);
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GHeroWithFragmentsData_hero extends GHeroWithFragmentsData_hero {
+class _$GHeroWithFragmentsData_hero__base
+    extends GHeroWithFragmentsData_hero__base {
   @override
   final String G__typename;
   @override
@@ -489,34 +477,35 @@ class _$GHeroWithFragmentsData_hero extends GHeroWithFragmentsData_hero {
   @override
   final String name;
 
-  factory _$GHeroWithFragmentsData_hero(
-          [void Function(GHeroWithFragmentsData_heroBuilder)? updates]) =>
-      (new GHeroWithFragmentsData_heroBuilder()..update(updates))._build();
+  factory _$GHeroWithFragmentsData_hero__base(
+          [void Function(GHeroWithFragmentsData_hero__baseBuilder)? updates]) =>
+      (new GHeroWithFragmentsData_hero__baseBuilder()..update(updates))
+          ._build();
 
-  _$GHeroWithFragmentsData_hero._(
+  _$GHeroWithFragmentsData_hero__base._(
       {required this.G__typename, required this.id, required this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GHeroWithFragmentsData_hero', 'G__typename');
+        G__typename, r'GHeroWithFragmentsData_hero__base', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        id, r'GHeroWithFragmentsData_hero', 'id');
+        id, r'GHeroWithFragmentsData_hero__base', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        name, r'GHeroWithFragmentsData_hero', 'name');
+        name, r'GHeroWithFragmentsData_hero__base', 'name');
   }
 
   @override
-  GHeroWithFragmentsData_hero rebuild(
-          void Function(GHeroWithFragmentsData_heroBuilder) updates) =>
+  GHeroWithFragmentsData_hero__base rebuild(
+          void Function(GHeroWithFragmentsData_hero__baseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GHeroWithFragmentsData_heroBuilder toBuilder() =>
-      new GHeroWithFragmentsData_heroBuilder()..replace(this);
+  GHeroWithFragmentsData_hero__baseBuilder toBuilder() =>
+      new GHeroWithFragmentsData_hero__baseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GHeroWithFragmentsData_hero &&
+    return other is GHeroWithFragmentsData_hero__base &&
         G__typename == other.G__typename &&
         id == other.id &&
         name == other.name;
@@ -530,7 +519,7 @@ class _$GHeroWithFragmentsData_hero extends GHeroWithFragmentsData_hero {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GHeroWithFragmentsData_hero')
+    return (newBuiltValueToStringHelper(r'GHeroWithFragmentsData_hero__base')
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('name', name))
@@ -538,11 +527,11 @@ class _$GHeroWithFragmentsData_hero extends GHeroWithFragmentsData_hero {
   }
 }
 
-class GHeroWithFragmentsData_heroBuilder
+class GHeroWithFragmentsData_hero__baseBuilder
     implements
-        Builder<GHeroWithFragmentsData_hero,
-            GHeroWithFragmentsData_heroBuilder> {
-  _$GHeroWithFragmentsData_hero? _$v;
+        Builder<GHeroWithFragmentsData_hero__base,
+            GHeroWithFragmentsData_hero__baseBuilder> {
+  _$GHeroWithFragmentsData_hero__base? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -556,11 +545,11 @@ class GHeroWithFragmentsData_heroBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  GHeroWithFragmentsData_heroBuilder() {
-    GHeroWithFragmentsData_hero._initializeBuilder(this);
+  GHeroWithFragmentsData_hero__baseBuilder() {
+    GHeroWithFragmentsData_hero__base._initializeBuilder(this);
   }
 
-  GHeroWithFragmentsData_heroBuilder get _$this {
+  GHeroWithFragmentsData_hero__baseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -572,28 +561,165 @@ class GHeroWithFragmentsData_heroBuilder
   }
 
   @override
-  void replace(GHeroWithFragmentsData_hero other) {
+  void replace(GHeroWithFragmentsData_hero__base other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GHeroWithFragmentsData_hero;
+    _$v = other as _$GHeroWithFragmentsData_hero__base;
   }
 
   @override
-  void update(void Function(GHeroWithFragmentsData_heroBuilder)? updates) {
+  void update(
+      void Function(GHeroWithFragmentsData_hero__baseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GHeroWithFragmentsData_hero build() => _build();
+  GHeroWithFragmentsData_hero__base build() => _build();
 
-  _$GHeroWithFragmentsData_hero _build() {
+  _$GHeroWithFragmentsData_hero__base _build() {
     final _$result = _$v ??
-        new _$GHeroWithFragmentsData_hero._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GHeroWithFragmentsData_hero', 'G__typename'),
+        new _$GHeroWithFragmentsData_hero__base._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GHeroWithFragmentsData_hero__base', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GHeroWithFragmentsData_hero', 'id'),
+                id, r'GHeroWithFragmentsData_hero__base', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'GHeroWithFragmentsData_hero', 'name'));
+                name, r'GHeroWithFragmentsData_hero__base', 'name'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GHeroWithFragmentsData_hero__asHuman
+    extends GHeroWithFragmentsData_hero__asHuman {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final String? homePlanet;
+
+  factory _$GHeroWithFragmentsData_hero__asHuman(
+          [void Function(GHeroWithFragmentsData_hero__asHumanBuilder)?
+              updates]) =>
+      (new GHeroWithFragmentsData_hero__asHumanBuilder()..update(updates))
+          ._build();
+
+  _$GHeroWithFragmentsData_hero__asHuman._(
+      {required this.G__typename,
+      required this.id,
+      required this.name,
+      this.homePlanet})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GHeroWithFragmentsData_hero__asHuman', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GHeroWithFragmentsData_hero__asHuman', 'id');
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'GHeroWithFragmentsData_hero__asHuman', 'name');
+  }
+
+  @override
+  GHeroWithFragmentsData_hero__asHuman rebuild(
+          void Function(GHeroWithFragmentsData_hero__asHumanBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GHeroWithFragmentsData_hero__asHumanBuilder toBuilder() =>
+      new GHeroWithFragmentsData_hero__asHumanBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GHeroWithFragmentsData_hero__asHuman &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        homePlanet == other.homePlanet;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), id.hashCode), name.hashCode),
+        homePlanet.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GHeroWithFragmentsData_hero__asHuman')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('homePlanet', homePlanet))
+        .toString();
+  }
+}
+
+class GHeroWithFragmentsData_hero__asHumanBuilder
+    implements
+        Builder<GHeroWithFragmentsData_hero__asHuman,
+            GHeroWithFragmentsData_hero__asHumanBuilder> {
+  _$GHeroWithFragmentsData_hero__asHuman? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _homePlanet;
+  String? get homePlanet => _$this._homePlanet;
+  set homePlanet(String? homePlanet) => _$this._homePlanet = homePlanet;
+
+  GHeroWithFragmentsData_hero__asHumanBuilder() {
+    GHeroWithFragmentsData_hero__asHuman._initializeBuilder(this);
+  }
+
+  GHeroWithFragmentsData_hero__asHumanBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _homePlanet = $v.homePlanet;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GHeroWithFragmentsData_hero__asHuman other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GHeroWithFragmentsData_hero__asHuman;
+  }
+
+  @override
+  void update(
+      void Function(GHeroWithFragmentsData_hero__asHumanBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GHeroWithFragmentsData_hero__asHuman build() => _build();
+
+  _$GHeroWithFragmentsData_hero__asHuman _build() {
+    final _$result = _$v ??
+        new _$GHeroWithFragmentsData_hero__asHuman._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GHeroWithFragmentsData_hero__asHuman', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GHeroWithFragmentsData_hero__asHuman', 'id'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'GHeroWithFragmentsData_hero__asHuman', 'name'),
+            homePlanet: homePlanet);
     replace(_$result);
     return _$result;
   }
@@ -794,7 +920,7 @@ class GdroidFieldsDataBuilder
   }
 }
 
-class _$GcharacterFieldsData__base extends GcharacterFieldsData__base {
+class _$GcharacterFieldsData extends GcharacterFieldsData {
   @override
   final String G__typename;
   @override
@@ -802,34 +928,33 @@ class _$GcharacterFieldsData__base extends GcharacterFieldsData__base {
   @override
   final String name;
 
-  factory _$GcharacterFieldsData__base(
-          [void Function(GcharacterFieldsData__baseBuilder)? updates]) =>
-      (new GcharacterFieldsData__baseBuilder()..update(updates))._build();
+  factory _$GcharacterFieldsData(
+          [void Function(GcharacterFieldsDataBuilder)? updates]) =>
+      (new GcharacterFieldsDataBuilder()..update(updates))._build();
 
-  _$GcharacterFieldsData__base._(
+  _$GcharacterFieldsData._(
       {required this.G__typename, required this.id, required this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GcharacterFieldsData__base', 'G__typename');
+        G__typename, r'GcharacterFieldsData', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(id, r'GcharacterFieldsData', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        id, r'GcharacterFieldsData__base', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        name, r'GcharacterFieldsData__base', 'name');
+        name, r'GcharacterFieldsData', 'name');
   }
 
   @override
-  GcharacterFieldsData__base rebuild(
-          void Function(GcharacterFieldsData__baseBuilder) updates) =>
+  GcharacterFieldsData rebuild(
+          void Function(GcharacterFieldsDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GcharacterFieldsData__baseBuilder toBuilder() =>
-      new GcharacterFieldsData__baseBuilder()..replace(this);
+  GcharacterFieldsDataBuilder toBuilder() =>
+      new GcharacterFieldsDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GcharacterFieldsData__base &&
+    return other is GcharacterFieldsData &&
         G__typename == other.G__typename &&
         id == other.id &&
         name == other.name;
@@ -843,7 +968,7 @@ class _$GcharacterFieldsData__base extends GcharacterFieldsData__base {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GcharacterFieldsData__base')
+    return (newBuiltValueToStringHelper(r'GcharacterFieldsData')
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('name', name))
@@ -851,10 +976,9 @@ class _$GcharacterFieldsData__base extends GcharacterFieldsData__base {
   }
 }
 
-class GcharacterFieldsData__baseBuilder
-    implements
-        Builder<GcharacterFieldsData__base, GcharacterFieldsData__baseBuilder> {
-  _$GcharacterFieldsData__base? _$v;
+class GcharacterFieldsDataBuilder
+    implements Builder<GcharacterFieldsData, GcharacterFieldsDataBuilder> {
+  _$GcharacterFieldsData? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -868,11 +992,11 @@ class GcharacterFieldsData__baseBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  GcharacterFieldsData__baseBuilder() {
-    GcharacterFieldsData__base._initializeBuilder(this);
+  GcharacterFieldsDataBuilder() {
+    GcharacterFieldsData._initializeBuilder(this);
   }
 
-  GcharacterFieldsData__baseBuilder get _$this {
+  GcharacterFieldsDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -884,160 +1008,28 @@ class GcharacterFieldsData__baseBuilder
   }
 
   @override
-  void replace(GcharacterFieldsData__base other) {
+  void replace(GcharacterFieldsData other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GcharacterFieldsData__base;
+    _$v = other as _$GcharacterFieldsData;
   }
 
   @override
-  void update(void Function(GcharacterFieldsData__baseBuilder)? updates) {
+  void update(void Function(GcharacterFieldsDataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GcharacterFieldsData__base build() => _build();
+  GcharacterFieldsData build() => _build();
 
-  _$GcharacterFieldsData__base _build() {
+  _$GcharacterFieldsData _build() {
     final _$result = _$v ??
-        new _$GcharacterFieldsData__base._(
+        new _$GcharacterFieldsData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GcharacterFieldsData__base', 'G__typename'),
+                G__typename, r'GcharacterFieldsData', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GcharacterFieldsData__base', 'id'),
+                id, r'GcharacterFieldsData', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'GcharacterFieldsData__base', 'name'));
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GcharacterFieldsData__asHuman extends GcharacterFieldsData__asHuman {
-  @override
-  final String G__typename;
-  @override
-  final String id;
-  @override
-  final String name;
-  @override
-  final String? homePlanet;
-
-  factory _$GcharacterFieldsData__asHuman(
-          [void Function(GcharacterFieldsData__asHumanBuilder)? updates]) =>
-      (new GcharacterFieldsData__asHumanBuilder()..update(updates))._build();
-
-  _$GcharacterFieldsData__asHuman._(
-      {required this.G__typename,
-      required this.id,
-      required this.name,
-      this.homePlanet})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GcharacterFieldsData__asHuman', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GcharacterFieldsData__asHuman', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        name, r'GcharacterFieldsData__asHuman', 'name');
-  }
-
-  @override
-  GcharacterFieldsData__asHuman rebuild(
-          void Function(GcharacterFieldsData__asHumanBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GcharacterFieldsData__asHumanBuilder toBuilder() =>
-      new GcharacterFieldsData__asHumanBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GcharacterFieldsData__asHuman &&
-        G__typename == other.G__typename &&
-        id == other.id &&
-        name == other.name &&
-        homePlanet == other.homePlanet;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, G__typename.hashCode), id.hashCode), name.hashCode),
-        homePlanet.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'GcharacterFieldsData__asHuman')
-          ..add('G__typename', G__typename)
-          ..add('id', id)
-          ..add('name', name)
-          ..add('homePlanet', homePlanet))
-        .toString();
-  }
-}
-
-class GcharacterFieldsData__asHumanBuilder
-    implements
-        Builder<GcharacterFieldsData__asHuman,
-            GcharacterFieldsData__asHumanBuilder> {
-  _$GcharacterFieldsData__asHuman? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _homePlanet;
-  String? get homePlanet => _$this._homePlanet;
-  set homePlanet(String? homePlanet) => _$this._homePlanet = homePlanet;
-
-  GcharacterFieldsData__asHumanBuilder() {
-    GcharacterFieldsData__asHuman._initializeBuilder(this);
-  }
-
-  GcharacterFieldsData__asHumanBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _id = $v.id;
-      _name = $v.name;
-      _homePlanet = $v.homePlanet;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GcharacterFieldsData__asHuman other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GcharacterFieldsData__asHuman;
-  }
-
-  @override
-  void update(void Function(GcharacterFieldsData__asHumanBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GcharacterFieldsData__asHuman build() => _build();
-
-  _$GcharacterFieldsData__asHuman _build() {
-    final _$result = _$v ??
-        new _$GcharacterFieldsData__asHuman._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GcharacterFieldsData__asHuman', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GcharacterFieldsData__asHuman', 'id'),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'GcharacterFieldsData__asHuman', 'name'),
-            homePlanet: homePlanet);
+                name, r'GcharacterFieldsData', 'name'));
     replace(_$result);
     return _$result;
   }

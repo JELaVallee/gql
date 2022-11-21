@@ -6,9 +6,9 @@ query HeroWithFragments($first: Int) {
     # ...droidFields
 
     ## PASS - This is fine if the fragment nest in and in-line that is a TypedNode
-    # ... on Human {
-    #    ...humanFields
-    # }
+    ... on Human {
+       ...humanFields
+    }
     # ... on Droid {
     #   ...droidFields
     # }
@@ -28,12 +28,12 @@ fragment characterFields on Character {
   name
 
   #### THIS IS OUR CORE BUG ####
-  ## FAIL - This fails even as an in-line fragment referencing a TypedNode fragment
+  ## PASS - This now passes with the fix in 24524d8
   # ... on Droid {
   #   ...droidFields
   # }
-  ## FAIL - This fails even as an in-line fragment w/ just Typed field ref
-  ... on Human {
-    ...humanFields
-  }
+  ## PASS - This now passes with the fix in 24524d8
+  # ... on Human {
+  #   homePlanet
+  # }
 }
