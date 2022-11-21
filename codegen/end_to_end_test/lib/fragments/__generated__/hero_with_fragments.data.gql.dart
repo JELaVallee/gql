@@ -6,6 +6,8 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:end_to_end_test/graphql/__generated__/serializers.gql.dart'
     as _i1;
+import 'package:gql_code_builder/src/serializers/inline_fragment_serializer.dart'
+    as _i2;
 
 part 'hero_with_fragments.data.gql.g.dart';
 
@@ -140,21 +142,34 @@ abstract class GcharacterFields {
   String get G__typename;
   String get id;
   String get name;
+}
+
+abstract class GcharacterFields__base implements GcharacterFields {
+  @override
+  String get G__typename;
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
   Map<String, dynamic> toJson();
 }
 
-abstract class GcharacterFieldsData
-    implements
-        Built<GcharacterFieldsData, GcharacterFieldsDataBuilder>,
-        GcharacterFields {
-  GcharacterFieldsData._();
+abstract class GcharacterFields__asHuman
+    implements GcharacterFields, GhumanFields {
+  @override
+  String get G__typename;
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
+  String? get homePlanet;
+  @override
+  Map<String, dynamic> toJson();
+}
 
-  factory GcharacterFieldsData(
-          [Function(GcharacterFieldsDataBuilder b) updates]) =
-      _$GcharacterFieldsData;
-
-  static void _initializeBuilder(GcharacterFieldsDataBuilder b) =>
-      b..G__typename = 'Character';
+abstract class GcharacterFieldsData implements GcharacterFields {
   @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
@@ -163,8 +178,11 @@ abstract class GcharacterFieldsData
   @override
   String get name;
   static Serializer<GcharacterFieldsData> get serializer =>
-      _$gcharacterFieldsDataSerializer;
-  @override
+      _i2.InlineFragmentSerializer<GcharacterFieldsData>(
+        'GcharacterFieldsData',
+        GcharacterFieldsData__base,
+        {'Human': GcharacterFieldsData__asHuman},
+      );
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GcharacterFieldsData.serializer,
         this,
@@ -172,6 +190,76 @@ abstract class GcharacterFieldsData
   static GcharacterFieldsData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GcharacterFieldsData.serializer,
+        json,
+      );
+}
+
+abstract class GcharacterFieldsData__base
+    implements
+        Built<GcharacterFieldsData__base, GcharacterFieldsData__baseBuilder>,
+        GcharacterFieldsData {
+  GcharacterFieldsData__base._();
+
+  factory GcharacterFieldsData__base(
+          [Function(GcharacterFieldsData__baseBuilder b) updates]) =
+      _$GcharacterFieldsData__base;
+
+  static void _initializeBuilder(GcharacterFieldsData__baseBuilder b) =>
+      b..G__typename = 'Character';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  String get id;
+  @override
+  String get name;
+  static Serializer<GcharacterFieldsData__base> get serializer =>
+      _$gcharacterFieldsDataBaseSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GcharacterFieldsData__base.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GcharacterFieldsData__base? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GcharacterFieldsData__base.serializer,
+        json,
+      );
+}
+
+abstract class GcharacterFieldsData__asHuman
+    implements
+        Built<GcharacterFieldsData__asHuman,
+            GcharacterFieldsData__asHumanBuilder>,
+        GcharacterFieldsData,
+        GhumanFields {
+  GcharacterFieldsData__asHuman._();
+
+  factory GcharacterFieldsData__asHuman(
+          [Function(GcharacterFieldsData__asHumanBuilder b) updates]) =
+      _$GcharacterFieldsData__asHuman;
+
+  static void _initializeBuilder(GcharacterFieldsData__asHumanBuilder b) =>
+      b..G__typename = 'Human';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
+  String? get homePlanet;
+  static Serializer<GcharacterFieldsData__asHuman> get serializer =>
+      _$gcharacterFieldsDataAsHumanSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GcharacterFieldsData__asHuman.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GcharacterFieldsData__asHuman? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GcharacterFieldsData__asHuman.serializer,
         json,
       );
 }

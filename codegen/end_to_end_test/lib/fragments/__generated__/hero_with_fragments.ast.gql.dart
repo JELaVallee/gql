@@ -98,6 +98,20 @@ const characterFields = _i1.FragmentDefinitionNode(
       directives: [],
       selectionSet: null,
     ),
+    _i1.InlineFragmentNode(
+      typeCondition: _i1.TypeConditionNode(
+          on: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Human'),
+        isNonNull: false,
+      )),
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FragmentSpreadNode(
+          name: _i1.NameNode(value: 'humanFields'),
+          directives: [],
+        )
+      ]),
+    ),
   ]),
 );
 const document = _i1.DocumentNode(definitions: [

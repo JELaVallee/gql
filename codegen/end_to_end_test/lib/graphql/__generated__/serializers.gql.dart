@@ -16,9 +16,11 @@ import 'package:end_to_end_test/custom_field_serializer.dart'
 import 'package:end_to_end_test/date_serializer.dart' show DateSerializer;
 import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.data.gql.dart'
     show
+        GcharacterFieldsData,
         GHeroWithFragmentsData,
         GHeroWithFragmentsData_hero,
-        GcharacterFieldsData,
+        GcharacterFieldsData__asHuman,
+        GcharacterFieldsData__base,
         GdroidFieldsData,
         GhumanFieldsData;
 import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.req.gql.dart'
@@ -78,6 +80,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(DateSerializer())
   ..add(CustomFieldSerializer())
   ..add(GHeroForEpisodeData_hero.serializer)
+  ..add(GcharacterFieldsData.serializer)
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
   GAliasedHero,
@@ -119,7 +122,8 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GReviewWithDateData,
   GReviewWithDateData_createReview,
   GReviewWithDateVars,
-  GcharacterFieldsData,
+  GcharacterFieldsData__asHuman,
+  GcharacterFieldsData__base,
   GcharacterFieldsVars,
   GdroidFieldsData,
   GdroidFieldsVars,

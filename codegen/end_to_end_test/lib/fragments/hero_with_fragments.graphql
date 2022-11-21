@@ -33,7 +33,7 @@ fragment characterFields on Character {
   #   ...droidFields
   # }
   ## FAIL - This fails even as an in-line fragment w/ just Typed field ref
-  # ... on Human {
-  #   homePlanet
-  # }
+  ... on Human {
+    ...humanFields
+  }
 }
