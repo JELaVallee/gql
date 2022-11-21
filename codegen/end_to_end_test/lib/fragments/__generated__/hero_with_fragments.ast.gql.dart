@@ -35,19 +35,9 @@ const HeroWithFragments = _i1.OperationDefinitionNode(
           name: _i1.NameNode(value: 'characterFields'),
           directives: [],
         ),
-        _i1.InlineFragmentNode(
-          typeCondition: _i1.TypeConditionNode(
-              on: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'Human'),
-            isNonNull: false,
-          )),
+        _i1.FragmentSpreadNode(
+          name: _i1.NameNode(value: 'humanFields'),
           directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FragmentSpreadNode(
-              name: _i1.NameNode(value: 'humanFields'),
-              directives: [],
-            )
-          ]),
         ),
       ]),
     )
@@ -62,12 +52,22 @@ const humanFields = _i1.FragmentDefinitionNode(
   )),
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
-    _i1.FieldNode(
-      name: _i1.NameNode(value: 'homePlanet'),
-      alias: null,
-      arguments: [],
+    _i1.InlineFragmentNode(
+      typeCondition: _i1.TypeConditionNode(
+          on: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Human'),
+        isNonNull: false,
+      )),
       directives: [],
-      selectionSet: null,
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'homePlanet'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        )
+      ]),
     )
   ]),
 );

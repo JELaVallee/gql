@@ -16,13 +16,13 @@ import 'package:end_to_end_test/custom_field_serializer.dart'
 import 'package:end_to_end_test/date_serializer.dart' show DateSerializer;
 import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.data.gql.dart'
     show
-        GHeroWithFragmentsData_hero,
+        GhumanFieldsData,
         GHeroWithFragmentsData,
-        GHeroWithFragmentsData_hero__asHuman,
-        GHeroWithFragmentsData_hero__base,
+        GHeroWithFragmentsData_hero,
         GcharacterFieldsData,
         GdroidFieldsData,
-        GhumanFieldsData;
+        GhumanFieldsData__asHuman,
+        GhumanFieldsData__base;
 import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.req.gql.dart'
     show GHeroWithFragments;
 import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.var.gql.dart'
@@ -80,7 +80,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(DateSerializer())
   ..add(CustomFieldSerializer())
   ..add(GHeroForEpisodeData_hero.serializer)
-  ..add(GHeroWithFragmentsData_hero.serializer)
+  ..add(GhumanFieldsData.serializer)
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
   GAliasedHero,
@@ -109,8 +109,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GHeroNoVarsVars,
   GHeroWithFragments,
   GHeroWithFragmentsData,
-  GHeroWithFragmentsData_hero__asHuman,
-  GHeroWithFragmentsData_hero__base,
+  GHeroWithFragmentsData_hero,
   GHeroWithFragmentsVars,
   GHumanWithArgs,
   GHumanWithArgsData,
@@ -127,7 +126,8 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GcharacterFieldsVars,
   GdroidFieldsData,
   GdroidFieldsVars,
-  GhumanFieldsData,
+  GhumanFieldsData__asHuman,
+  GhumanFieldsData__base,
   GhumanFieldsVars,
 ])
 final Serializers serializers = _serializersBuilder.build();

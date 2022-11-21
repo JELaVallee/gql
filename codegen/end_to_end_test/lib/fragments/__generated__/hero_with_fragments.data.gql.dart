@@ -37,7 +37,19 @@ abstract class GHeroWithFragmentsData
       );
 }
 
-abstract class GHeroWithFragmentsData_hero implements GcharacterFields {
+abstract class GHeroWithFragmentsData_hero
+    implements
+        Built<GHeroWithFragmentsData_hero, GHeroWithFragmentsData_heroBuilder>,
+        GcharacterFields,
+        GhumanFields {
+  GHeroWithFragmentsData_hero._();
+
+  factory GHeroWithFragmentsData_hero(
+          [Function(GHeroWithFragmentsData_heroBuilder b) updates]) =
+      _$GHeroWithFragmentsData_hero;
+
+  static void _initializeBuilder(GHeroWithFragmentsData_heroBuilder b) =>
+      b..G__typename = 'Character';
   @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
@@ -46,11 +58,8 @@ abstract class GHeroWithFragmentsData_hero implements GcharacterFields {
   @override
   String get name;
   static Serializer<GHeroWithFragmentsData_hero> get serializer =>
-      _i2.InlineFragmentSerializer<GHeroWithFragmentsData_hero>(
-        'GHeroWithFragmentsData_hero',
-        GHeroWithFragmentsData_hero__base,
-        {'Human': GHeroWithFragmentsData_hero__asHuman},
-      );
+      _$gHeroWithFragmentsDataHeroSerializer;
+  @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GHeroWithFragmentsData_hero.serializer,
         this,
@@ -62,105 +71,35 @@ abstract class GHeroWithFragmentsData_hero implements GcharacterFields {
       );
 }
 
-abstract class GHeroWithFragmentsData_hero__base
-    implements
-        Built<GHeroWithFragmentsData_hero__base,
-            GHeroWithFragmentsData_hero__baseBuilder>,
-        GHeroWithFragmentsData_hero,
-        GcharacterFields {
-  GHeroWithFragmentsData_hero__base._();
-
-  factory GHeroWithFragmentsData_hero__base(
-          [Function(GHeroWithFragmentsData_hero__baseBuilder b) updates]) =
-      _$GHeroWithFragmentsData_hero__base;
-
-  static void _initializeBuilder(GHeroWithFragmentsData_hero__baseBuilder b) =>
-      b..G__typename = 'Character';
-  @override
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  @override
-  String get id;
-  @override
-  String get name;
-  static Serializer<GHeroWithFragmentsData_hero__base> get serializer =>
-      _$gHeroWithFragmentsDataHeroBaseSerializer;
-  @override
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GHeroWithFragmentsData_hero__base.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GHeroWithFragmentsData_hero__base? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GHeroWithFragmentsData_hero__base.serializer,
-        json,
-      );
-}
-
-abstract class GHeroWithFragmentsData_hero__asHuman
-    implements
-        Built<GHeroWithFragmentsData_hero__asHuman,
-            GHeroWithFragmentsData_hero__asHumanBuilder>,
-        GHeroWithFragmentsData_hero,
-        GcharacterFields,
-        GhumanFields {
-  GHeroWithFragmentsData_hero__asHuman._();
-
-  factory GHeroWithFragmentsData_hero__asHuman(
-          [Function(GHeroWithFragmentsData_hero__asHumanBuilder b) updates]) =
-      _$GHeroWithFragmentsData_hero__asHuman;
-
-  static void _initializeBuilder(
-          GHeroWithFragmentsData_hero__asHumanBuilder b) =>
-      b..G__typename = 'Human';
-  @override
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String? get homePlanet;
-  static Serializer<GHeroWithFragmentsData_hero__asHuman> get serializer =>
-      _$gHeroWithFragmentsDataHeroAsHumanSerializer;
-  @override
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GHeroWithFragmentsData_hero__asHuman.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GHeroWithFragmentsData_hero__asHuman? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GHeroWithFragmentsData_hero__asHuman.serializer,
-        json,
-      );
-}
-
 abstract class GhumanFields {
   String get G__typename;
-  String? get homePlanet;
+}
+
+abstract class GhumanFields__base implements GhumanFields {
+  @override
+  String get G__typename;
+  @override
   Map<String, dynamic> toJson();
 }
 
-abstract class GhumanFieldsData
-    implements Built<GhumanFieldsData, GhumanFieldsDataBuilder>, GhumanFields {
-  GhumanFieldsData._();
+abstract class GhumanFields__asHuman implements GhumanFields {
+  @override
+  String get G__typename;
+  String? get homePlanet;
+  @override
+  Map<String, dynamic> toJson();
+}
 
-  factory GhumanFieldsData([Function(GhumanFieldsDataBuilder b) updates]) =
-      _$GhumanFieldsData;
-
-  static void _initializeBuilder(GhumanFieldsDataBuilder b) =>
-      b..G__typename = 'Human';
+abstract class GhumanFieldsData implements GhumanFields {
   @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  @override
-  String? get homePlanet;
   static Serializer<GhumanFieldsData> get serializer =>
-      _$ghumanFieldsDataSerializer;
-  @override
+      _i2.InlineFragmentSerializer<GhumanFieldsData>(
+        'GhumanFieldsData',
+        GhumanFieldsData__base,
+        {'Human': GhumanFieldsData__asHuman},
+      );
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GhumanFieldsData.serializer,
         this,
@@ -168,6 +107,65 @@ abstract class GhumanFieldsData
   static GhumanFieldsData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GhumanFieldsData.serializer,
+        json,
+      );
+}
+
+abstract class GhumanFieldsData__base
+    implements
+        Built<GhumanFieldsData__base, GhumanFieldsData__baseBuilder>,
+        GhumanFieldsData {
+  GhumanFieldsData__base._();
+
+  factory GhumanFieldsData__base(
+          [Function(GhumanFieldsData__baseBuilder b) updates]) =
+      _$GhumanFieldsData__base;
+
+  static void _initializeBuilder(GhumanFieldsData__baseBuilder b) =>
+      b..G__typename = 'Human';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  static Serializer<GhumanFieldsData__base> get serializer =>
+      _$ghumanFieldsDataBaseSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GhumanFieldsData__base.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GhumanFieldsData__base? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GhumanFieldsData__base.serializer,
+        json,
+      );
+}
+
+abstract class GhumanFieldsData__asHuman
+    implements
+        Built<GhumanFieldsData__asHuman, GhumanFieldsData__asHumanBuilder>,
+        GhumanFieldsData {
+  GhumanFieldsData__asHuman._();
+
+  factory GhumanFieldsData__asHuman(
+          [Function(GhumanFieldsData__asHumanBuilder b) updates]) =
+      _$GhumanFieldsData__asHuman;
+
+  static void _initializeBuilder(GhumanFieldsData__asHumanBuilder b) =>
+      b..G__typename = 'Human';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get homePlanet;
+  static Serializer<GhumanFieldsData__asHuman> get serializer =>
+      _$ghumanFieldsDataAsHumanSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GhumanFieldsData__asHuman.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GhumanFieldsData__asHuman? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GhumanFieldsData__asHuman.serializer,
         json,
       );
 }
