@@ -9,9 +9,9 @@ const HeroWithFragments = _i1.OperationDefinitionNode(
   name: _i1.NameNode(value: 'HeroWithFragments'),
   variableDefinitions: [
     _i1.VariableDefinitionNode(
-      variable: _i1.VariableNode(name: _i1.NameNode(value: 'first')),
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'text')),
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Int'),
+        name: _i1.NameNode(value: 'String'),
         isNonNull: false,
       ),
       defaultValue: _i1.DefaultValueNode(value: null),
@@ -21,12 +21,12 @@ const HeroWithFragments = _i1.OperationDefinitionNode(
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
     _i1.FieldNode(
-      name: _i1.NameNode(value: 'hero'),
+      name: _i1.NameNode(value: 'search'),
       alias: null,
       arguments: [
         _i1.ArgumentNode(
-          name: _i1.NameNode(value: 'episode'),
-          value: _i1.EnumValueNode(name: _i1.NameNode(value: 'JEDI')),
+          name: _i1.NameNode(value: 'text'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'text')),
         )
       ],
       directives: [],
@@ -34,11 +34,7 @@ const HeroWithFragments = _i1.OperationDefinitionNode(
         _i1.FragmentSpreadNode(
           name: _i1.NameNode(value: 'characterFields'),
           directives: [],
-        ),
-        _i1.FragmentSpreadNode(
-          name: _i1.NameNode(value: 'humanFields'),
-          directives: [],
-        ),
+        )
       ]),
     )
   ]),
@@ -52,22 +48,27 @@ const humanFields = _i1.FragmentDefinitionNode(
   )),
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
-    _i1.InlineFragmentNode(
-      typeCondition: _i1.TypeConditionNode(
-          on: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Human'),
-        isNonNull: false,
-      )),
+    _i1.FragmentSpreadNode(
+      name: _i1.NameNode(value: 'humanFieldHomePlanet'),
       directives: [],
-      selectionSet: _i1.SelectionSetNode(selections: [
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'homePlanet'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        )
-      ]),
+    )
+  ]),
+);
+const humanFieldHomePlanet = _i1.FragmentDefinitionNode(
+  name: _i1.NameNode(value: 'humanFieldHomePlanet'),
+  typeCondition: _i1.TypeConditionNode(
+      on: _i1.NamedTypeNode(
+    name: _i1.NameNode(value: 'Human'),
+    isNonNull: false,
+  )),
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'homePlanet'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: null,
     )
   ]),
 );
@@ -112,11 +113,26 @@ const characterFields = _i1.FragmentDefinitionNode(
       directives: [],
       selectionSet: null,
     ),
+    _i1.InlineFragmentNode(
+      typeCondition: _i1.TypeConditionNode(
+          on: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Droid'),
+        isNonNull: false,
+      )),
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FragmentSpreadNode(
+          name: _i1.NameNode(value: 'droidFields'),
+          directives: [],
+        )
+      ]),
+    ),
   ]),
 );
 const document = _i1.DocumentNode(definitions: [
   HeroWithFragments,
   humanFields,
+  humanFieldHomePlanet,
   droidFields,
   characterFields,
 ]);

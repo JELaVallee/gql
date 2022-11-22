@@ -2,10 +2,10 @@ query HeroWithFragments($first: Int) {
   hero(episode: JEDI) {
     ...characterFields
     ## FAIL - These fail to resolve fields on Interface extended Type
-    ...humanFields
+    # ...humanFields
     # ...droidFields
 
-    ## PASS - This is fine if the fragment nest in and in-line that is a TypedNode
+    ## PASS - This is fine if the FragmentSpread nested in an InlineFragment typed for the derived-Type
     # ... on Human {
     #    ...humanFields
     # }
@@ -52,12 +52,34 @@ query HeroWithFragments($first: Int) {
     #   homePlanet
     # }
 
-    # Note: This is not proper GraphQL syntax. Though, conceptually, it seems like it should work
+    ## Note: This is not proper GraphQL syntax. Though, conceptually, it seems like it should work
     # ...humanFields on Human
+
+    ## Note: We should also consider what the "proper" dart output is for these two scenarios.
+    #        Should they produce the same generated structure? I think they should.
+    #
+    # ...humanFields
+    #
+    # ... on Human {
+    #     humanFields
+    # }
+    #
   }
 }
 
+## Note: This is GQL-valid, and syntactically the same as below
+#        but will produce very different codegen results
+# fragment humanFields on Human {
+#   ... on Human {
+#     homePlanet
+#   }
+# }
+
 fragment humanFields on Human {
+  ...humanFieldHomePlanet
+}
+
+fragment humanFieldHomePlanet on Human {
   homePlanet
 }
 
@@ -70,11 +92,11 @@ fragment characterFields on Character {
   name
 
   #### THIS IS OUR PRIMARY BUG ####
-  #### Desc: Nesting InlineFragmentNodes within FragmentDefinitionNodes causes unbound recursion
+  #### Desc: Nesting InlineFragmentNodes within FragmentDefinitionNodes causes unbound recursion -> stack_overflow
   ## PASS - This now passes with the fix in 24524d8
-  # ... on Droid {
-  #   ...droidFields
-  # }
+  ... on Droid {
+    ...droidFields
+  }
   ## PASS - This now passes with the fix in 24524d8
   # ... on Human {
   #   homePlanet

@@ -16,6 +16,7 @@ List<Class> buildOperationDataClasses(
     throw Exception("Operations must be named");
   }
 
+  // FIXME: @JELaVallee - This should be called `fragmentFieldSelections` because `fragmentMap` is misleading
   final fragmentMap = _fragmentMap(docSource);
   return buildSelectionSetDataClasses(
     name: "${op.name!.value}Data",

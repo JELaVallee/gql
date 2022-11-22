@@ -14,15 +14,6 @@ import 'package:end_to_end_test/custom_field.dart';
 import 'package:end_to_end_test/custom_field_serializer.dart'
     show CustomFieldSerializer;
 import 'package:end_to_end_test/date_serializer.dart' show DateSerializer;
-import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.data.gql.dart'
-    show
-        GhumanFieldsData,
-        GHeroWithFragmentsData,
-        GHeroWithFragmentsData_hero,
-        GcharacterFieldsData,
-        GdroidFieldsData,
-        GhumanFieldsData__asHuman,
-        GhumanFieldsData__base;
 import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.req.gql.dart'
     show GHeroWithFragments;
 import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.var.gql.dart'
@@ -30,6 +21,7 @@ import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.var.
         GHeroWithFragmentsVars,
         GcharacterFieldsVars,
         GdroidFieldsVars,
+        GhumanFieldHomePlanetVars,
         GhumanFieldsVars;
 import 'package:end_to_end_test/graphql/__generated__/schema.schema.gql.dart'
     show GColorInput, GEpisode, GISODate, GLengthUnit, GReviewInput;
@@ -80,7 +72,6 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(DateSerializer())
   ..add(CustomFieldSerializer())
   ..add(GHeroForEpisodeData_hero.serializer)
-  ..add(GhumanFieldsData.serializer)
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
   GAliasedHero,
@@ -108,8 +99,6 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GHeroNoVarsData_hero,
   GHeroNoVarsVars,
   GHeroWithFragments,
-  GHeroWithFragmentsData,
-  GHeroWithFragmentsData_hero,
   GHeroWithFragmentsVars,
   GHumanWithArgs,
   GHumanWithArgsData,
@@ -122,12 +111,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GReviewWithDateData,
   GReviewWithDateData_createReview,
   GReviewWithDateVars,
-  GcharacterFieldsData,
   GcharacterFieldsVars,
-  GdroidFieldsData,
   GdroidFieldsVars,
-  GhumanFieldsData__asHuman,
-  GhumanFieldsData__base,
+  GhumanFieldHomePlanetVars,
   GhumanFieldsVars,
 ])
 final Serializers serializers = _serializersBuilder.build();

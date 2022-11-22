@@ -17,7 +17,7 @@ abstract class GHeroWithFragmentsVars
           [Function(GHeroWithFragmentsVarsBuilder b) updates]) =
       _$GHeroWithFragmentsVars;
 
-  int? get first;
+  String? get text;
   static Serializer<GHeroWithFragmentsVars> get serializer =>
       _$gHeroWithFragmentsVarsSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -47,6 +47,28 @@ abstract class GhumanFieldsVars
   static GhumanFieldsVars? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GhumanFieldsVars.serializer,
+        json,
+      );
+}
+
+abstract class GhumanFieldHomePlanetVars
+    implements
+        Built<GhumanFieldHomePlanetVars, GhumanFieldHomePlanetVarsBuilder> {
+  GhumanFieldHomePlanetVars._();
+
+  factory GhumanFieldHomePlanetVars(
+          [Function(GhumanFieldHomePlanetVarsBuilder b) updates]) =
+      _$GhumanFieldHomePlanetVars;
+
+  static Serializer<GhumanFieldHomePlanetVars> get serializer =>
+      _$ghumanFieldHomePlanetVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GhumanFieldHomePlanetVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GhumanFieldHomePlanetVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GhumanFieldHomePlanetVars.serializer,
         json,
       );
 }
