@@ -12,14 +12,53 @@ query HeroWithFragments($first: Int) {
     # ... on Droid {
     #   ...droidFields
     # }
+
+    #################################
+    # How these get >> Parsed <<
+    #################################
+    #### Note: This appears to be largely informed by the 2018 GQL spec's
+    ####       Fragment Composition defs: https://spec.graphql.org/June2018/#sec-Fragment-Spread-Type-Existence
+
+    ### THIS IS OUR SECONDARY BUG
+    #### Desc: Concrete-Typed FragmentSpreadNodes in an Interface/Union Typed context
+    ####       attempt to access ExtendedType Fields on the Interface/Union type causing
+    ####       "Bad State: No element" exception during build-creation traversal.
+    # AST Type: FragmentSpreadNode
+    # Typed context: Character
+    # Note: Since FragmentDefinitionNodes have NOT been loaded, the `on Human` type cannot
+    #       be inferred during linear-visitor parsing, so all this current parser can do
+    #       is capture the FragmentSpread. CodeGen _should_ produce the same structure as
+    #       the next example, effectively, "unwrapping" the FragmentDefinitionNode's TypedNode
+    #       into an InlineFragmentNode wrapping this FragmentSpread.
+    # ...humanFields
+
+    # AST Type: InlineFragmentNode
+    # Typed context: Human
+    # Note: Since this parser is doing a linear-visitor walk, this creates the proper nesting
+    #       of the TypedNode/FragmentSpread such that the builder traversal of the AST can
+    #       properly type-scope the `humanFields` FragmentSpreadNode's field expansion.
+    # ... on Human {
+    #   # AST Type: FragmentSpreadNode
+    #   # Typed context: Human
+    #   ...humanFields
+    # }
+
+    # AST Type: InlineFragmentNode
+    # Typed context: Human
+    # Note: Same as above... sans the Fragment nesting
+    # ... on Human {
+    #   # AST Type: FieldNode
+    #   # Typed context: Human
+    #   homePlanet
+    # }
+
+    # Note: This is not proper GraphQL syntax. Though, conceptually, it seems like it should work
+    # ...humanFields on Human
   }
 }
 
-## PASS - This is equivalent to L9-10, BUT the `on Human` on L19 is effectively ignored and codegen is slightly different
 fragment humanFields on Human {
-  ... on Human {
-    homePlanet
-  }
+  homePlanet
 }
 
 fragment droidFields on Droid {
@@ -30,7 +69,8 @@ fragment characterFields on Character {
   id
   name
 
-  #### THIS IS OUR CORE BUG ####
+  #### THIS IS OUR PRIMARY BUG ####
+  #### Desc: Nesting InlineFragmentNodes within FragmentDefinitionNodes causes unbound recursion
   ## PASS - This now passes with the fix in 24524d8
   # ... on Droid {
   #   ...droidFields
