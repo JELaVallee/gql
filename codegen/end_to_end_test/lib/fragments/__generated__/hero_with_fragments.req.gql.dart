@@ -14,29 +14,33 @@ import 'package:gql_exec/gql_exec.dart' as _i1;
 
 part 'hero_with_fragments.req.gql.g.dart';
 
-abstract class GHeroWithFragments
-    implements Built<GHeroWithFragments, GHeroWithFragmentsBuilder> {
-  GHeroWithFragments._();
+abstract class GHeroWithInterfaceTypedFragments
+    implements
+        Built<GHeroWithInterfaceTypedFragments,
+            GHeroWithInterfaceTypedFragmentsBuilder> {
+  GHeroWithInterfaceTypedFragments._();
 
-  factory GHeroWithFragments([Function(GHeroWithFragmentsBuilder b) updates]) =
-      _$GHeroWithFragments;
+  factory GHeroWithInterfaceTypedFragments(
+          [Function(GHeroWithInterfaceTypedFragmentsBuilder b) updates]) =
+      _$GHeroWithInterfaceTypedFragments;
 
-  static void _initializeBuilder(GHeroWithFragmentsBuilder b) => b
+  static void _initializeBuilder(GHeroWithInterfaceTypedFragmentsBuilder b) => b
     ..operation = _i1.Operation(
       document: _i2.document,
-      operationName: 'HeroWithFragments',
+      operationName: 'HeroWithInterfaceTypedFragments',
     );
-  _i3.GHeroWithFragmentsVars get vars;
+  _i3.GHeroWithInterfaceTypedFragmentsVars get vars;
   _i1.Operation get operation;
-  static Serializer<GHeroWithFragments> get serializer =>
-      _$gHeroWithFragmentsSerializer;
+  static Serializer<GHeroWithInterfaceTypedFragments> get serializer =>
+      _$gHeroWithInterfaceTypedFragmentsSerializer;
   Map<String, dynamic> toJson() => (_i4.serializers.serializeWith(
-        GHeroWithFragments.serializer,
+        GHeroWithInterfaceTypedFragments.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GHeroWithFragments? fromJson(Map<String, dynamic> json) =>
+  static GHeroWithInterfaceTypedFragments? fromJson(
+          Map<String, dynamic> json) =>
       _i4.serializers.deserializeWith(
-        GHeroWithFragments.serializer,
+        GHeroWithInterfaceTypedFragments.serializer,
         json,
       );
 }

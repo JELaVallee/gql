@@ -6,48 +6,46 @@ part of 'hero_with_fragments.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GHeroWithFragmentsVars> _$gHeroWithFragmentsVarsSerializer =
-    new _$GHeroWithFragmentsVarsSerializer();
-Serializer<GhumanFieldsVars> _$ghumanFieldsVarsSerializer =
-    new _$GhumanFieldsVarsSerializer();
-Serializer<GhumanFieldHomePlanetVars> _$ghumanFieldHomePlanetVarsSerializer =
-    new _$GhumanFieldHomePlanetVarsSerializer();
-Serializer<GdroidFieldsVars> _$gdroidFieldsVarsSerializer =
-    new _$GdroidFieldsVarsSerializer();
-Serializer<GcharacterFieldsVars> _$gcharacterFieldsVarsSerializer =
-    new _$GcharacterFieldsVarsSerializer();
+Serializer<GHeroWithInterfaceTypedFragmentsVars>
+    _$gHeroWithInterfaceTypedFragmentsVarsSerializer =
+    new _$GHeroWithInterfaceTypedFragmentsVarsSerializer();
+Serializer<GcharacterFieldsFragmentVars>
+    _$gcharacterFieldsFragmentVarsSerializer =
+    new _$GcharacterFieldsFragmentVarsSerializer();
+Serializer<GhumanFieldsFragmentVars> _$ghumanFieldsFragmentVarsSerializer =
+    new _$GhumanFieldsFragmentVarsSerializer();
 
-class _$GHeroWithFragmentsVarsSerializer
-    implements StructuredSerializer<GHeroWithFragmentsVars> {
+class _$GHeroWithInterfaceTypedFragmentsVarsSerializer
+    implements StructuredSerializer<GHeroWithInterfaceTypedFragmentsVars> {
   @override
   final Iterable<Type> types = const [
-    GHeroWithFragmentsVars,
-    _$GHeroWithFragmentsVars
+    GHeroWithInterfaceTypedFragmentsVars,
+    _$GHeroWithInterfaceTypedFragmentsVars
   ];
   @override
-  final String wireName = 'GHeroWithFragmentsVars';
+  final String wireName = 'GHeroWithInterfaceTypedFragmentsVars';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GHeroWithFragmentsVars object,
+      Serializers serializers, GHeroWithInterfaceTypedFragmentsVars object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
-    value = object.text;
+    value = object.episode;
     if (value != null) {
       result
-        ..add('text')
+        ..add('episode')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(_i1.GEpisode)));
     }
     return result;
   }
 
   @override
-  GHeroWithFragmentsVars deserialize(
+  GHeroWithInterfaceTypedFragmentsVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GHeroWithFragmentsVarsBuilder();
+    final result = new GHeroWithInterfaceTypedFragmentsVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -55,9 +53,9 @@ class _$GHeroWithFragmentsVarsSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'text':
-          result.text = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+        case 'episode':
+          result.episode = serializers.deserialize(value,
+              specifiedType: const FullType(_i1.GEpisode)) as _i1.GEpisode?;
           break;
       }
     }
@@ -66,410 +64,261 @@ class _$GHeroWithFragmentsVarsSerializer
   }
 }
 
-class _$GhumanFieldsVarsSerializer
-    implements StructuredSerializer<GhumanFieldsVars> {
-  @override
-  final Iterable<Type> types = const [GhumanFieldsVars, _$GhumanFieldsVars];
-  @override
-  final String wireName = 'GhumanFieldsVars';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, GhumanFieldsVars object,
-      {FullType specifiedType = FullType.unspecified}) {
-    return <Object?>[];
-  }
-
-  @override
-  GhumanFieldsVars deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    return new GhumanFieldsVarsBuilder().build();
-  }
-}
-
-class _$GhumanFieldHomePlanetVarsSerializer
-    implements StructuredSerializer<GhumanFieldHomePlanetVars> {
+class _$GcharacterFieldsFragmentVarsSerializer
+    implements StructuredSerializer<GcharacterFieldsFragmentVars> {
   @override
   final Iterable<Type> types = const [
-    GhumanFieldHomePlanetVars,
-    _$GhumanFieldHomePlanetVars
+    GcharacterFieldsFragmentVars,
+    _$GcharacterFieldsFragmentVars
   ];
   @override
-  final String wireName = 'GhumanFieldHomePlanetVars';
+  final String wireName = 'GcharacterFieldsFragmentVars';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GhumanFieldHomePlanetVars object,
+      Serializers serializers, GcharacterFieldsFragmentVars object,
       {FullType specifiedType = FullType.unspecified}) {
     return <Object?>[];
   }
 
   @override
-  GhumanFieldHomePlanetVars deserialize(
+  GcharacterFieldsFragmentVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GhumanFieldHomePlanetVarsBuilder().build();
+    return new GcharacterFieldsFragmentVarsBuilder().build();
   }
 }
 
-class _$GdroidFieldsVarsSerializer
-    implements StructuredSerializer<GdroidFieldsVars> {
-  @override
-  final Iterable<Type> types = const [GdroidFieldsVars, _$GdroidFieldsVars];
-  @override
-  final String wireName = 'GdroidFieldsVars';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, GdroidFieldsVars object,
-      {FullType specifiedType = FullType.unspecified}) {
-    return <Object?>[];
-  }
-
-  @override
-  GdroidFieldsVars deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    return new GdroidFieldsVarsBuilder().build();
-  }
-}
-
-class _$GcharacterFieldsVarsSerializer
-    implements StructuredSerializer<GcharacterFieldsVars> {
+class _$GhumanFieldsFragmentVarsSerializer
+    implements StructuredSerializer<GhumanFieldsFragmentVars> {
   @override
   final Iterable<Type> types = const [
-    GcharacterFieldsVars,
-    _$GcharacterFieldsVars
+    GhumanFieldsFragmentVars,
+    _$GhumanFieldsFragmentVars
   ];
   @override
-  final String wireName = 'GcharacterFieldsVars';
+  final String wireName = 'GhumanFieldsFragmentVars';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GcharacterFieldsVars object,
+      Serializers serializers, GhumanFieldsFragmentVars object,
       {FullType specifiedType = FullType.unspecified}) {
     return <Object?>[];
   }
 
   @override
-  GcharacterFieldsVars deserialize(
+  GhumanFieldsFragmentVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GcharacterFieldsVarsBuilder().build();
+    return new GhumanFieldsFragmentVarsBuilder().build();
   }
 }
 
-class _$GHeroWithFragmentsVars extends GHeroWithFragmentsVars {
+class _$GHeroWithInterfaceTypedFragmentsVars
+    extends GHeroWithInterfaceTypedFragmentsVars {
   @override
-  final String? text;
+  final _i1.GEpisode? episode;
 
-  factory _$GHeroWithFragmentsVars(
-          [void Function(GHeroWithFragmentsVarsBuilder)? updates]) =>
-      (new GHeroWithFragmentsVarsBuilder()..update(updates))._build();
+  factory _$GHeroWithInterfaceTypedFragmentsVars(
+          [void Function(GHeroWithInterfaceTypedFragmentsVarsBuilder)?
+              updates]) =>
+      (new GHeroWithInterfaceTypedFragmentsVarsBuilder()..update(updates))
+          ._build();
 
-  _$GHeroWithFragmentsVars._({this.text}) : super._();
+  _$GHeroWithInterfaceTypedFragmentsVars._({this.episode}) : super._();
 
   @override
-  GHeroWithFragmentsVars rebuild(
-          void Function(GHeroWithFragmentsVarsBuilder) updates) =>
+  GHeroWithInterfaceTypedFragmentsVars rebuild(
+          void Function(GHeroWithInterfaceTypedFragmentsVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GHeroWithFragmentsVarsBuilder toBuilder() =>
-      new GHeroWithFragmentsVarsBuilder()..replace(this);
+  GHeroWithInterfaceTypedFragmentsVarsBuilder toBuilder() =>
+      new GHeroWithInterfaceTypedFragmentsVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GHeroWithFragmentsVars && text == other.text;
+    return other is GHeroWithInterfaceTypedFragmentsVars &&
+        episode == other.episode;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, text.hashCode));
+    return $jf($jc(0, episode.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GHeroWithFragmentsVars')
-          ..add('text', text))
+    return (newBuiltValueToStringHelper(r'GHeroWithInterfaceTypedFragmentsVars')
+          ..add('episode', episode))
         .toString();
   }
 }
 
-class GHeroWithFragmentsVarsBuilder
-    implements Builder<GHeroWithFragmentsVars, GHeroWithFragmentsVarsBuilder> {
-  _$GHeroWithFragmentsVars? _$v;
+class GHeroWithInterfaceTypedFragmentsVarsBuilder
+    implements
+        Builder<GHeroWithInterfaceTypedFragmentsVars,
+            GHeroWithInterfaceTypedFragmentsVarsBuilder> {
+  _$GHeroWithInterfaceTypedFragmentsVars? _$v;
 
-  String? _text;
-  String? get text => _$this._text;
-  set text(String? text) => _$this._text = text;
+  _i1.GEpisode? _episode;
+  _i1.GEpisode? get episode => _$this._episode;
+  set episode(_i1.GEpisode? episode) => _$this._episode = episode;
 
-  GHeroWithFragmentsVarsBuilder();
+  GHeroWithInterfaceTypedFragmentsVarsBuilder();
 
-  GHeroWithFragmentsVarsBuilder get _$this {
+  GHeroWithInterfaceTypedFragmentsVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _text = $v.text;
+      _episode = $v.episode;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GHeroWithFragmentsVars other) {
+  void replace(GHeroWithInterfaceTypedFragmentsVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GHeroWithFragmentsVars;
+    _$v = other as _$GHeroWithInterfaceTypedFragmentsVars;
   }
 
   @override
-  void update(void Function(GHeroWithFragmentsVarsBuilder)? updates) {
+  void update(
+      void Function(GHeroWithInterfaceTypedFragmentsVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GHeroWithFragmentsVars build() => _build();
+  GHeroWithInterfaceTypedFragmentsVars build() => _build();
 
-  _$GHeroWithFragmentsVars _build() {
-    final _$result = _$v ?? new _$GHeroWithFragmentsVars._(text: text);
+  _$GHeroWithInterfaceTypedFragmentsVars _build() {
+    final _$result =
+        _$v ?? new _$GHeroWithInterfaceTypedFragmentsVars._(episode: episode);
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GhumanFieldsVars extends GhumanFieldsVars {
-  factory _$GhumanFieldsVars(
-          [void Function(GhumanFieldsVarsBuilder)? updates]) =>
-      (new GhumanFieldsVarsBuilder()..update(updates))._build();
+class _$GcharacterFieldsFragmentVars extends GcharacterFieldsFragmentVars {
+  factory _$GcharacterFieldsFragmentVars(
+          [void Function(GcharacterFieldsFragmentVarsBuilder)? updates]) =>
+      (new GcharacterFieldsFragmentVarsBuilder()..update(updates))._build();
 
-  _$GhumanFieldsVars._() : super._();
+  _$GcharacterFieldsFragmentVars._() : super._();
 
   @override
-  GhumanFieldsVars rebuild(void Function(GhumanFieldsVarsBuilder) updates) =>
+  GcharacterFieldsFragmentVars rebuild(
+          void Function(GcharacterFieldsFragmentVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GhumanFieldsVarsBuilder toBuilder() =>
-      new GhumanFieldsVarsBuilder()..replace(this);
+  GcharacterFieldsFragmentVarsBuilder toBuilder() =>
+      new GcharacterFieldsFragmentVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GhumanFieldsVars;
+    return other is GcharacterFieldsFragmentVars;
   }
 
   @override
   int get hashCode {
-    return 468302555;
+    return 462920541;
   }
 
   @override
   String toString() {
-    return newBuiltValueToStringHelper(r'GhumanFieldsVars').toString();
+    return newBuiltValueToStringHelper(r'GcharacterFieldsFragmentVars')
+        .toString();
   }
 }
 
-class GhumanFieldsVarsBuilder
-    implements Builder<GhumanFieldsVars, GhumanFieldsVarsBuilder> {
-  _$GhumanFieldsVars? _$v;
-
-  GhumanFieldsVarsBuilder();
-
-  @override
-  void replace(GhumanFieldsVars other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GhumanFieldsVars;
-  }
-
-  @override
-  void update(void Function(GhumanFieldsVarsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GhumanFieldsVars build() => _build();
-
-  _$GhumanFieldsVars _build() {
-    final _$result = _$v ?? new _$GhumanFieldsVars._();
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GhumanFieldHomePlanetVars extends GhumanFieldHomePlanetVars {
-  factory _$GhumanFieldHomePlanetVars(
-          [void Function(GhumanFieldHomePlanetVarsBuilder)? updates]) =>
-      (new GhumanFieldHomePlanetVarsBuilder()..update(updates))._build();
-
-  _$GhumanFieldHomePlanetVars._() : super._();
-
-  @override
-  GhumanFieldHomePlanetVars rebuild(
-          void Function(GhumanFieldHomePlanetVarsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GhumanFieldHomePlanetVarsBuilder toBuilder() =>
-      new GhumanFieldHomePlanetVarsBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GhumanFieldHomePlanetVars;
-  }
-
-  @override
-  int get hashCode {
-    return 34739523;
-  }
-
-  @override
-  String toString() {
-    return newBuiltValueToStringHelper(r'GhumanFieldHomePlanetVars').toString();
-  }
-}
-
-class GhumanFieldHomePlanetVarsBuilder
+class GcharacterFieldsFragmentVarsBuilder
     implements
-        Builder<GhumanFieldHomePlanetVars, GhumanFieldHomePlanetVarsBuilder> {
-  _$GhumanFieldHomePlanetVars? _$v;
+        Builder<GcharacterFieldsFragmentVars,
+            GcharacterFieldsFragmentVarsBuilder> {
+  _$GcharacterFieldsFragmentVars? _$v;
 
-  GhumanFieldHomePlanetVarsBuilder();
+  GcharacterFieldsFragmentVarsBuilder();
 
   @override
-  void replace(GhumanFieldHomePlanetVars other) {
+  void replace(GcharacterFieldsFragmentVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GhumanFieldHomePlanetVars;
+    _$v = other as _$GcharacterFieldsFragmentVars;
   }
 
   @override
-  void update(void Function(GhumanFieldHomePlanetVarsBuilder)? updates) {
+  void update(void Function(GcharacterFieldsFragmentVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GhumanFieldHomePlanetVars build() => _build();
+  GcharacterFieldsFragmentVars build() => _build();
 
-  _$GhumanFieldHomePlanetVars _build() {
-    final _$result = _$v ?? new _$GhumanFieldHomePlanetVars._();
+  _$GcharacterFieldsFragmentVars _build() {
+    final _$result = _$v ?? new _$GcharacterFieldsFragmentVars._();
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GdroidFieldsVars extends GdroidFieldsVars {
-  factory _$GdroidFieldsVars(
-          [void Function(GdroidFieldsVarsBuilder)? updates]) =>
-      (new GdroidFieldsVarsBuilder()..update(updates))._build();
+class _$GhumanFieldsFragmentVars extends GhumanFieldsFragmentVars {
+  factory _$GhumanFieldsFragmentVars(
+          [void Function(GhumanFieldsFragmentVarsBuilder)? updates]) =>
+      (new GhumanFieldsFragmentVarsBuilder()..update(updates))._build();
 
-  _$GdroidFieldsVars._() : super._();
+  _$GhumanFieldsFragmentVars._() : super._();
 
   @override
-  GdroidFieldsVars rebuild(void Function(GdroidFieldsVarsBuilder) updates) =>
+  GhumanFieldsFragmentVars rebuild(
+          void Function(GhumanFieldsFragmentVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GdroidFieldsVarsBuilder toBuilder() =>
-      new GdroidFieldsVarsBuilder()..replace(this);
+  GhumanFieldsFragmentVarsBuilder toBuilder() =>
+      new GhumanFieldsFragmentVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GdroidFieldsVars;
+    return other is GhumanFieldsFragmentVars;
   }
 
   @override
   int get hashCode {
-    return 728138042;
+    return 101332054;
   }
 
   @override
   String toString() {
-    return newBuiltValueToStringHelper(r'GdroidFieldsVars').toString();
+    return newBuiltValueToStringHelper(r'GhumanFieldsFragmentVars').toString();
   }
 }
 
-class GdroidFieldsVarsBuilder
-    implements Builder<GdroidFieldsVars, GdroidFieldsVarsBuilder> {
-  _$GdroidFieldsVars? _$v;
+class GhumanFieldsFragmentVarsBuilder
+    implements
+        Builder<GhumanFieldsFragmentVars, GhumanFieldsFragmentVarsBuilder> {
+  _$GhumanFieldsFragmentVars? _$v;
 
-  GdroidFieldsVarsBuilder();
+  GhumanFieldsFragmentVarsBuilder();
 
   @override
-  void replace(GdroidFieldsVars other) {
+  void replace(GhumanFieldsFragmentVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GdroidFieldsVars;
+    _$v = other as _$GhumanFieldsFragmentVars;
   }
 
   @override
-  void update(void Function(GdroidFieldsVarsBuilder)? updates) {
+  void update(void Function(GhumanFieldsFragmentVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GdroidFieldsVars build() => _build();
+  GhumanFieldsFragmentVars build() => _build();
 
-  _$GdroidFieldsVars _build() {
-    final _$result = _$v ?? new _$GdroidFieldsVars._();
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GcharacterFieldsVars extends GcharacterFieldsVars {
-  factory _$GcharacterFieldsVars(
-          [void Function(GcharacterFieldsVarsBuilder)? updates]) =>
-      (new GcharacterFieldsVarsBuilder()..update(updates))._build();
-
-  _$GcharacterFieldsVars._() : super._();
-
-  @override
-  GcharacterFieldsVars rebuild(
-          void Function(GcharacterFieldsVarsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GcharacterFieldsVarsBuilder toBuilder() =>
-      new GcharacterFieldsVarsBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GcharacterFieldsVars;
-  }
-
-  @override
-  int get hashCode {
-    return 398844952;
-  }
-
-  @override
-  String toString() {
-    return newBuiltValueToStringHelper(r'GcharacterFieldsVars').toString();
-  }
-}
-
-class GcharacterFieldsVarsBuilder
-    implements Builder<GcharacterFieldsVars, GcharacterFieldsVarsBuilder> {
-  _$GcharacterFieldsVars? _$v;
-
-  GcharacterFieldsVarsBuilder();
-
-  @override
-  void replace(GcharacterFieldsVars other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GcharacterFieldsVars;
-  }
-
-  @override
-  void update(void Function(GcharacterFieldsVarsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GcharacterFieldsVars build() => _build();
-
-  _$GcharacterFieldsVars _build() {
-    final _$result = _$v ?? new _$GcharacterFieldsVars._();
+  _$GhumanFieldsFragmentVars _build() {
+    final _$result = _$v ?? new _$GhumanFieldsFragmentVars._();
     replace(_$result);
     return _$result;
   }

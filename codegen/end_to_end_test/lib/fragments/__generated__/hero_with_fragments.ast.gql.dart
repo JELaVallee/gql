@@ -4,14 +4,14 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:gql/ast.dart' as _i1;
 
-const HeroWithFragments = _i1.OperationDefinitionNode(
+const HeroWithInterfaceTypedFragments = _i1.OperationDefinitionNode(
   type: _i1.OperationType.query,
-  name: _i1.NameNode(value: 'HeroWithFragments'),
+  name: _i1.NameNode(value: 'HeroWithInterfaceTypedFragments'),
   variableDefinitions: [
     _i1.VariableDefinitionNode(
-      variable: _i1.VariableNode(name: _i1.NameNode(value: 'text')),
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'episode')),
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'String'),
+        name: _i1.NameNode(value: 'Episode'),
         isNonNull: false,
       ),
       defaultValue: _i1.DefaultValueNode(value: null),
@@ -21,77 +21,26 @@ const HeroWithFragments = _i1.OperationDefinitionNode(
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
     _i1.FieldNode(
-      name: _i1.NameNode(value: 'search'),
+      name: _i1.NameNode(value: 'hero'),
       alias: null,
       arguments: [
         _i1.ArgumentNode(
-          name: _i1.NameNode(value: 'text'),
-          value: _i1.VariableNode(name: _i1.NameNode(value: 'text')),
+          name: _i1.NameNode(value: 'episode'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'episode')),
         )
       ],
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
         _i1.FragmentSpreadNode(
-          name: _i1.NameNode(value: 'characterFields'),
+          name: _i1.NameNode(value: 'characterFieldsFragment'),
           directives: [],
         )
       ]),
     )
   ]),
 );
-const humanFields = _i1.FragmentDefinitionNode(
-  name: _i1.NameNode(value: 'humanFields'),
-  typeCondition: _i1.TypeConditionNode(
-      on: _i1.NamedTypeNode(
-    name: _i1.NameNode(value: 'Human'),
-    isNonNull: false,
-  )),
-  directives: [],
-  selectionSet: _i1.SelectionSetNode(selections: [
-    _i1.FragmentSpreadNode(
-      name: _i1.NameNode(value: 'humanFieldHomePlanet'),
-      directives: [],
-    )
-  ]),
-);
-const humanFieldHomePlanet = _i1.FragmentDefinitionNode(
-  name: _i1.NameNode(value: 'humanFieldHomePlanet'),
-  typeCondition: _i1.TypeConditionNode(
-      on: _i1.NamedTypeNode(
-    name: _i1.NameNode(value: 'Human'),
-    isNonNull: false,
-  )),
-  directives: [],
-  selectionSet: _i1.SelectionSetNode(selections: [
-    _i1.FieldNode(
-      name: _i1.NameNode(value: 'homePlanet'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    )
-  ]),
-);
-const droidFields = _i1.FragmentDefinitionNode(
-  name: _i1.NameNode(value: 'droidFields'),
-  typeCondition: _i1.TypeConditionNode(
-      on: _i1.NamedTypeNode(
-    name: _i1.NameNode(value: 'Droid'),
-    isNonNull: false,
-  )),
-  directives: [],
-  selectionSet: _i1.SelectionSetNode(selections: [
-    _i1.FieldNode(
-      name: _i1.NameNode(value: 'primaryFunction'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    )
-  ]),
-);
-const characterFields = _i1.FragmentDefinitionNode(
-  name: _i1.NameNode(value: 'characterFields'),
+const characterFieldsFragment = _i1.FragmentDefinitionNode(
+  name: _i1.NameNode(value: 'characterFieldsFragment'),
   typeCondition: _i1.TypeConditionNode(
       on: _i1.NamedTypeNode(
     name: _i1.NameNode(value: 'Character'),
@@ -116,23 +65,56 @@ const characterFields = _i1.FragmentDefinitionNode(
     _i1.InlineFragmentNode(
       typeCondition: _i1.TypeConditionNode(
           on: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Droid'),
+        name: _i1.NameNode(value: 'Human'),
         isNonNull: false,
       )),
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
         _i1.FragmentSpreadNode(
-          name: _i1.NameNode(value: 'droidFields'),
+          name: _i1.NameNode(value: 'humanFieldsFragment'),
           directives: [],
+        )
+      ]),
+    ),
+    _i1.InlineFragmentNode(
+      typeCondition: _i1.TypeConditionNode(
+          on: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Human'),
+        isNonNull: false,
+      )),
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'homePlanet'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
         )
       ]),
     ),
   ]),
 );
+const humanFieldsFragment = _i1.FragmentDefinitionNode(
+  name: _i1.NameNode(value: 'humanFieldsFragment'),
+  typeCondition: _i1.TypeConditionNode(
+      on: _i1.NamedTypeNode(
+    name: _i1.NameNode(value: 'Human'),
+    isNonNull: false,
+  )),
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'homePlanet'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: null,
+    )
+  ]),
+);
 const document = _i1.DocumentNode(definitions: [
-  HeroWithFragments,
-  humanFields,
-  humanFieldHomePlanet,
-  droidFields,
-  characterFields,
+  HeroWithInterfaceTypedFragments,
+  characterFieldsFragment,
+  humanFieldsFragment,
 ]);
