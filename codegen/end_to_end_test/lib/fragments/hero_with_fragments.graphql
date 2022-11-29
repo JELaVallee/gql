@@ -11,7 +11,7 @@ fragment characterFieldsFragment on Character {
     ...humanFieldsFragment
   }
   ... on Human {
-    homePlanet
+    birthday
   }
   # TODO: @JELaVallee: Document this issue for future investigation
   #### FAILS: "Bad state: No element" due to traversing the base-Interface selectors

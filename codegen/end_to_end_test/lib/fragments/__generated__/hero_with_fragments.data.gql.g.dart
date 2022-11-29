@@ -839,7 +839,7 @@ class _$GcharacterFieldsFragmentData__asHuman
   @override
   final String name;
   @override
-  final String? homePlanet;
+  final DateTime birthday;
 
   factory _$GcharacterFieldsFragmentData__asHuman(
           [void Function(GcharacterFieldsFragmentData__asHumanBuilder)?
@@ -851,7 +851,7 @@ class _$GcharacterFieldsFragmentData__asHuman
       {required this.G__typename,
       required this.id,
       required this.name,
-      this.homePlanet})
+      required this.birthday})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GcharacterFieldsFragmentData__asHuman', 'G__typename');
@@ -859,6 +859,8 @@ class _$GcharacterFieldsFragmentData__asHuman
         id, r'GcharacterFieldsFragmentData__asHuman', 'id');
     BuiltValueNullFieldError.checkNotNull(
         name, r'GcharacterFieldsFragmentData__asHuman', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        birthday, r'GcharacterFieldsFragmentData__asHuman', 'birthday');
   }
 
   @override
@@ -878,14 +880,14 @@ class _$GcharacterFieldsFragmentData__asHuman
         G__typename == other.G__typename &&
         id == other.id &&
         name == other.name &&
-        homePlanet == other.homePlanet;
+        birthday == other.birthday;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc($jc($jc(0, G__typename.hashCode), id.hashCode), name.hashCode),
-        homePlanet.hashCode));
+        birthday.hashCode));
   }
 
   @override
@@ -895,7 +897,7 @@ class _$GcharacterFieldsFragmentData__asHuman
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('name', name)
-          ..add('homePlanet', homePlanet))
+          ..add('birthday', birthday))
         .toString();
   }
 }
@@ -918,9 +920,9 @@ class GcharacterFieldsFragmentData__asHumanBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _homePlanet;
-  String? get homePlanet => _$this._homePlanet;
-  set homePlanet(String? homePlanet) => _$this._homePlanet = homePlanet;
+  DateTime? _birthday;
+  DateTime? get birthday => _$this._birthday;
+  set birthday(DateTime? birthday) => _$this._birthday = birthday;
 
   GcharacterFieldsFragmentData__asHumanBuilder() {
     GcharacterFieldsFragmentData__asHuman._initializeBuilder(this);
@@ -932,7 +934,7 @@ class GcharacterFieldsFragmentData__asHumanBuilder
       _G__typename = $v.G__typename;
       _id = $v.id;
       _name = $v.name;
-      _homePlanet = $v.homePlanet;
+      _birthday = $v.birthday;
       _$v = null;
     }
     return this;
@@ -962,7 +964,8 @@ class GcharacterFieldsFragmentData__asHumanBuilder
                 id, r'GcharacterFieldsFragmentData__asHuman', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'GcharacterFieldsFragmentData__asHuman', 'name'),
-            homePlanet: homePlanet);
+            birthday: BuiltValueNullFieldError.checkNotNull(birthday,
+                r'GcharacterFieldsFragmentData__asHuman', 'birthday'));
     replace(_$result);
     return _$result;
   }

@@ -117,7 +117,7 @@ abstract class GcharacterFieldsFragment__asHuman
   String get id;
   @override
   String get name;
-  String? get homePlanet;
+  DateTime get birthday;
   @override
   Map<String, dynamic> toJson();
 }
@@ -243,7 +243,7 @@ abstract class GcharacterFieldsFragmentData__asHuman
   String get id;
   @override
   String get name;
-  String? get homePlanet;
+  DateTime get birthday;
   static Serializer<GcharacterFieldsFragmentData__asHuman> get serializer =>
       _$gcharacterFieldsFragmentDataAsHumanSerializer;
   @override
