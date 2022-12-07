@@ -42,30 +42,19 @@ abstract class GHeroWithInterfaceSubTypedFragmentsData
       );
 }
 
-abstract class GHeroWithInterfaceSubTypedFragmentsData_hero
-    implements
-        Built<GHeroWithInterfaceSubTypedFragmentsData_hero,
-            GHeroWithInterfaceSubTypedFragmentsData_heroBuilder>,
-        GheroFieldsFragment {
-  GHeroWithInterfaceSubTypedFragmentsData_hero._();
-
-  factory GHeroWithInterfaceSubTypedFragmentsData_hero(
-      [Function(GHeroWithInterfaceSubTypedFragmentsData_heroBuilder b)
-          updates]) = _$GHeroWithInterfaceSubTypedFragmentsData_hero;
-
-  static void _initializeBuilder(
-          GHeroWithInterfaceSubTypedFragmentsData_heroBuilder b) =>
-      b..G__typename = 'Character';
-  @override
+abstract class GHeroWithInterfaceSubTypedFragmentsData_hero {
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  @override
-  String get id;
-  @override
-  String get name;
   static Serializer<GHeroWithInterfaceSubTypedFragmentsData_hero>
-      get serializer => _$gHeroWithInterfaceSubTypedFragmentsDataHeroSerializer;
-  @override
+      get serializer => _i2.InlineFragmentSerializer<
+              GHeroWithInterfaceSubTypedFragmentsData_hero>(
+            'GHeroWithInterfaceSubTypedFragmentsData_hero',
+            GHeroWithInterfaceSubTypedFragmentsData_hero__base,
+            {
+              'Character':
+                  GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter
+            },
+          );
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GHeroWithInterfaceSubTypedFragmentsData_hero.serializer,
         this,
@@ -74,6 +63,79 @@ abstract class GHeroWithInterfaceSubTypedFragmentsData_hero
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GHeroWithInterfaceSubTypedFragmentsData_hero.serializer,
+        json,
+      );
+}
+
+abstract class GHeroWithInterfaceSubTypedFragmentsData_hero__base
+    implements
+        Built<GHeroWithInterfaceSubTypedFragmentsData_hero__base,
+            GHeroWithInterfaceSubTypedFragmentsData_hero__baseBuilder>,
+        GHeroWithInterfaceSubTypedFragmentsData_hero {
+  GHeroWithInterfaceSubTypedFragmentsData_hero__base._();
+
+  factory GHeroWithInterfaceSubTypedFragmentsData_hero__base(
+      [Function(GHeroWithInterfaceSubTypedFragmentsData_hero__baseBuilder b)
+          updates]) = _$GHeroWithInterfaceSubTypedFragmentsData_hero__base;
+
+  static void _initializeBuilder(
+          GHeroWithInterfaceSubTypedFragmentsData_hero__baseBuilder b) =>
+      b..G__typename = 'Character';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  static Serializer<GHeroWithInterfaceSubTypedFragmentsData_hero__base>
+      get serializer =>
+          _$gHeroWithInterfaceSubTypedFragmentsDataHeroBaseSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GHeroWithInterfaceSubTypedFragmentsData_hero__base.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GHeroWithInterfaceSubTypedFragmentsData_hero__base? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GHeroWithInterfaceSubTypedFragmentsData_hero__base.serializer,
+        json,
+      );
+}
+
+abstract class GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter
+    implements
+        Built<GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter,
+            GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacterBuilder>,
+        GHeroWithInterfaceSubTypedFragmentsData_hero,
+        GheroFieldsFragment {
+  GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter._();
+
+  factory GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter(
+      [Function(
+              GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacterBuilder
+                  b)
+          updates]) = _$GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter;
+
+  static void _initializeBuilder(
+          GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacterBuilder b) =>
+      b..G__typename = 'Character';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  String get id;
+  @override
+  String get name;
+  static Serializer<GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter>
+      get serializer =>
+          _$gHeroWithInterfaceSubTypedFragmentsDataHeroAsCharacterSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter.serializer,
         json,
       );
 }

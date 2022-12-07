@@ -32,11 +32,13 @@ import 'package:end_to_end_test/fragments/__generated__/hero_with_fragments.var.
     show GHeroWithFragmentsVars, GcomparisonFieldsVars, GheroDataVars;
 import 'package:end_to_end_test/fragments/__generated__/hero_with_interface_subtyped_fragments.data.gql.dart'
     show
+        GHeroWithInterfaceSubTypedFragmentsData_hero,
         GheroFieldsFragmentData,
         GheroFieldsFragmentData__asHuman_friends,
         GhumanFieldsFragmentData_friends,
         GHeroWithInterfaceSubTypedFragmentsData,
-        GHeroWithInterfaceSubTypedFragmentsData_hero,
+        GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter,
+        GHeroWithInterfaceSubTypedFragmentsData_hero__base,
         GdroidFieldsFragmentData,
         GheroFieldsFragmentData__asDroid,
         GheroFieldsFragmentData__asHuman,
@@ -139,6 +141,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(DateSerializer())
   ..add(CustomFieldSerializer())
   ..add(GHeroForEpisodeData_hero.serializer)
+  ..add(GHeroWithInterfaceSubTypedFragmentsData_hero.serializer)
   ..add(GSearchWithUnionResultsData_search.serializer)
   ..add(GSearchWithUnionResultsOnTypedFragmentsData_search.serializer)
   ..add(GheroFieldsFragmentData.serializer)
@@ -180,7 +183,8 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GHeroWithFragmentsVars,
   GHeroWithInterfaceSubTypedFragments,
   GHeroWithInterfaceSubTypedFragmentsData,
-  GHeroWithInterfaceSubTypedFragmentsData_hero,
+  GHeroWithInterfaceSubTypedFragmentsData_hero__asCharacter,
+  GHeroWithInterfaceSubTypedFragmentsData_hero__base,
   GHeroWithInterfaceSubTypedFragmentsVars,
   GHumanWithArgs,
   GHumanWithArgsData,
