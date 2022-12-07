@@ -11,6 +11,9 @@ Serializer<GSearchWithUnionResults> _$gSearchWithUnionResultsSerializer =
 Serializer<GSearchWithUnionResultsOnTypedFragments>
     _$gSearchWithUnionResultsOnTypedFragmentsSerializer =
     new _$GSearchWithUnionResultsOnTypedFragmentsSerializer();
+Serializer<GSearchWithUnionResultsOnUnionFragment>
+    _$gSearchWithUnionResultsOnUnionFragmentSerializer =
+    new _$GSearchWithUnionResultsOnUnionFragmentSerializer();
 
 class _$GSearchWithUnionResultsSerializer
     implements StructuredSerializer<GSearchWithUnionResults> {
@@ -111,6 +114,62 @@ class _$GSearchWithUnionResultsOnTypedFragmentsSerializer
                   specifiedType: const FullType(
                       _i3.GSearchWithUnionResultsOnTypedFragmentsVars))!
               as _i3.GSearchWithUnionResultsOnTypedFragmentsVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i1.Operation))! as _i1.Operation;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentSerializer
+    implements StructuredSerializer<GSearchWithUnionResultsOnUnionFragment> {
+  @override
+  final Iterable<Type> types = const [
+    GSearchWithUnionResultsOnUnionFragment,
+    _$GSearchWithUnionResultsOnUnionFragment
+  ];
+  @override
+  final String wireName = 'GSearchWithUnionResultsOnUnionFragment';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GSearchWithUnionResultsOnUnionFragment object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType:
+              const FullType(_i3.GSearchWithUnionResultsOnUnionFragmentVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i1.Operation)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragment deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GSearchWithUnionResultsOnUnionFragmentBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      _i3.GSearchWithUnionResultsOnUnionFragmentVars))!
+              as _i3.GSearchWithUnionResultsOnUnionFragmentVars);
           break;
         case 'operation':
           result.operation = serializers.deserialize(value,
@@ -355,6 +414,133 @@ class GSearchWithUnionResultsOnTypedFragmentsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GSearchWithUnionResultsOnTypedFragments',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragment
+    extends GSearchWithUnionResultsOnUnionFragment {
+  @override
+  final _i3.GSearchWithUnionResultsOnUnionFragmentVars vars;
+  @override
+  final _i1.Operation operation;
+
+  factory _$GSearchWithUnionResultsOnUnionFragment(
+          [void Function(GSearchWithUnionResultsOnUnionFragmentBuilder)?
+              updates]) =>
+      (new GSearchWithUnionResultsOnUnionFragmentBuilder()..update(updates))
+          ._build();
+
+  _$GSearchWithUnionResultsOnUnionFragment._(
+      {required this.vars, required this.operation})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GSearchWithUnionResultsOnUnionFragment', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GSearchWithUnionResultsOnUnionFragment', 'operation');
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragment rebuild(
+          void Function(GSearchWithUnionResultsOnUnionFragmentBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentBuilder toBuilder() =>
+      new GSearchWithUnionResultsOnUnionFragmentBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GSearchWithUnionResultsOnUnionFragment &&
+        vars == other.vars &&
+        operation == other.operation;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, vars.hashCode), operation.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GSearchWithUnionResultsOnUnionFragment')
+          ..add('vars', vars)
+          ..add('operation', operation))
+        .toString();
+  }
+}
+
+class GSearchWithUnionResultsOnUnionFragmentBuilder
+    implements
+        Builder<GSearchWithUnionResultsOnUnionFragment,
+            GSearchWithUnionResultsOnUnionFragmentBuilder> {
+  _$GSearchWithUnionResultsOnUnionFragment? _$v;
+
+  _i3.GSearchWithUnionResultsOnUnionFragmentVarsBuilder? _vars;
+  _i3.GSearchWithUnionResultsOnUnionFragmentVarsBuilder get vars =>
+      _$this._vars ??=
+          new _i3.GSearchWithUnionResultsOnUnionFragmentVarsBuilder();
+  set vars(_i3.GSearchWithUnionResultsOnUnionFragmentVarsBuilder? vars) =>
+      _$this._vars = vars;
+
+  _i1.Operation? _operation;
+  _i1.Operation? get operation => _$this._operation;
+  set operation(_i1.Operation? operation) => _$this._operation = operation;
+
+  GSearchWithUnionResultsOnUnionFragmentBuilder() {
+    GSearchWithUnionResultsOnUnionFragment._initializeBuilder(this);
+  }
+
+  GSearchWithUnionResultsOnUnionFragmentBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GSearchWithUnionResultsOnUnionFragment other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSearchWithUnionResultsOnUnionFragment;
+  }
+
+  @override
+  void update(
+      void Function(GSearchWithUnionResultsOnUnionFragmentBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragment build() => _build();
+
+  _$GSearchWithUnionResultsOnUnionFragment _build() {
+    _$GSearchWithUnionResultsOnUnionFragment _$result;
+    try {
+      _$result = _$v ??
+          new _$GSearchWithUnionResultsOnUnionFragment._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(operation,
+                  r'GSearchWithUnionResultsOnUnionFragment', 'operation'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GSearchWithUnionResultsOnUnionFragment',
             _$failedField,
             e.toString());
       }

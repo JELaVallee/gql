@@ -36,6 +36,27 @@ Serializer<GSearchWithUnionResultsOnTypedFragmentsData_search__asDroid>
 Serializer<GSearchWithUnionResultsOnTypedFragmentsData_search__asStarship>
     _$gSearchWithUnionResultsOnTypedFragmentsDataSearchAsStarshipSerializer =
     new _$GSearchWithUnionResultsOnTypedFragmentsData_search__asStarshipSerializer();
+Serializer<GSearchWithUnionResultsOnUnionFragmentData>
+    _$gSearchWithUnionResultsOnUnionFragmentDataSerializer =
+    new _$GSearchWithUnionResultsOnUnionFragmentDataSerializer();
+Serializer<GSearchWithUnionResultsOnUnionFragmentData_search__base>
+    _$gSearchWithUnionResultsOnUnionFragmentDataSearchBaseSerializer =
+    new _$GSearchWithUnionResultsOnUnionFragmentData_search__baseSerializer();
+Serializer<GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult>
+    _$gSearchWithUnionResultsOnUnionFragmentDataSearchAsSearchResultSerializer =
+    new _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultSerializer();
+Serializer<GsearchResultsFragmentData__base>
+    _$gsearchResultsFragmentDataBaseSerializer =
+    new _$GsearchResultsFragmentData__baseSerializer();
+Serializer<GsearchResultsFragmentData__asHuman>
+    _$gsearchResultsFragmentDataAsHumanSerializer =
+    new _$GsearchResultsFragmentData__asHumanSerializer();
+Serializer<GsearchResultsFragmentData__asDroid>
+    _$gsearchResultsFragmentDataAsDroidSerializer =
+    new _$GsearchResultsFragmentData__asDroidSerializer();
+Serializer<GsearchResultsFragmentData__asStarship>
+    _$gsearchResultsFragmentDataAsStarshipSerializer =
+    new _$GsearchResultsFragmentData__asStarshipSerializer();
 Serializer<GhumanFieldsFragmentData> _$ghumanFieldsFragmentDataSerializer =
     new _$GhumanFieldsFragmentDataSerializer();
 Serializer<GdroidFieldsFragmentData> _$gdroidFieldsFragmentDataSerializer =
@@ -632,6 +653,405 @@ class _$GSearchWithUnionResultsOnTypedFragmentsData_search__asStarshipSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result =
         new GSearchWithUnionResultsOnTypedFragmentsData_search__asStarshipBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'length':
+          result.length = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentDataSerializer
+    implements
+        StructuredSerializer<GSearchWithUnionResultsOnUnionFragmentData> {
+  @override
+  final Iterable<Type> types = const [
+    GSearchWithUnionResultsOnUnionFragmentData,
+    _$GSearchWithUnionResultsOnUnionFragmentData
+  ];
+  @override
+  final String wireName = 'GSearchWithUnionResultsOnUnionFragmentData';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GSearchWithUnionResultsOnUnionFragmentData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.search;
+    if (value != null) {
+      result
+        ..add('search')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType.nullable(
+                  GSearchWithUnionResultsOnUnionFragmentData_search)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GSearchWithUnionResultsOnUnionFragmentDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'search':
+          result.search.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType.nullable(
+                    GSearchWithUnionResultsOnUnionFragmentData_search)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentData_search__baseSerializer
+    implements
+        StructuredSerializer<
+            GSearchWithUnionResultsOnUnionFragmentData_search__base> {
+  @override
+  final Iterable<Type> types = const [
+    GSearchWithUnionResultsOnUnionFragmentData_search__base,
+    _$GSearchWithUnionResultsOnUnionFragmentData_search__base
+  ];
+  @override
+  final String wireName =
+      'GSearchWithUnionResultsOnUnionFragmentData_search__base';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GSearchWithUnionResultsOnUnionFragmentData_search__base object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__base deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultSerializer
+    implements
+        StructuredSerializer<
+            GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult> {
+  @override
+  final Iterable<Type> types = const [
+    GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
+    _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+  ];
+  @override
+  final String wireName =
+      'GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GsearchResultsFragmentData__baseSerializer
+    implements StructuredSerializer<GsearchResultsFragmentData__base> {
+  @override
+  final Iterable<Type> types = const [
+    GsearchResultsFragmentData__base,
+    _$GsearchResultsFragmentData__base
+  ];
+  @override
+  final String wireName = 'GsearchResultsFragmentData__base';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GsearchResultsFragmentData__base object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GsearchResultsFragmentData__base deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GsearchResultsFragmentData__baseBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GsearchResultsFragmentData__asHumanSerializer
+    implements StructuredSerializer<GsearchResultsFragmentData__asHuman> {
+  @override
+  final Iterable<Type> types = const [
+    GsearchResultsFragmentData__asHuman,
+    _$GsearchResultsFragmentData__asHuman
+  ];
+  @override
+  final String wireName = 'GsearchResultsFragmentData__asHuman';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GsearchResultsFragmentData__asHuman object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.homePlanet;
+    if (value != null) {
+      result
+        ..add('homePlanet')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GsearchResultsFragmentData__asHuman deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GsearchResultsFragmentData__asHumanBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'homePlanet':
+          result.homePlanet = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GsearchResultsFragmentData__asDroidSerializer
+    implements StructuredSerializer<GsearchResultsFragmentData__asDroid> {
+  @override
+  final Iterable<Type> types = const [
+    GsearchResultsFragmentData__asDroid,
+    _$GsearchResultsFragmentData__asDroid
+  ];
+  @override
+  final String wireName = 'GsearchResultsFragmentData__asDroid';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GsearchResultsFragmentData__asDroid object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.primaryFunction;
+    if (value != null) {
+      result
+        ..add('primaryFunction')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GsearchResultsFragmentData__asDroid deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GsearchResultsFragmentData__asDroidBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'primaryFunction':
+          result.primaryFunction = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GsearchResultsFragmentData__asStarshipSerializer
+    implements StructuredSerializer<GsearchResultsFragmentData__asStarship> {
+  @override
+  final Iterable<Type> types = const [
+    GsearchResultsFragmentData__asStarship,
+    _$GsearchResultsFragmentData__asStarship
+  ];
+  @override
+  final String wireName = 'GsearchResultsFragmentData__asStarship';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GsearchResultsFragmentData__asStarship object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.length;
+    if (value != null) {
+      result
+        ..add('length')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
+    return result;
+  }
+
+  @override
+  GsearchResultsFragmentData__asStarship deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GsearchResultsFragmentData__asStarshipBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2088,6 +2508,809 @@ class GSearchWithUnionResultsOnTypedFragmentsData_search__asStarshipBuilder
                 name,
                 r'GSearchWithUnionResultsOnTypedFragmentsData_search__asStarship',
                 'name'),
+            length: length);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentData
+    extends GSearchWithUnionResultsOnUnionFragmentData {
+  @override
+  final String G__typename;
+  @override
+  final BuiltList<GSearchWithUnionResultsOnUnionFragmentData_search?>? search;
+
+  factory _$GSearchWithUnionResultsOnUnionFragmentData(
+          [void Function(GSearchWithUnionResultsOnUnionFragmentDataBuilder)?
+              updates]) =>
+      (new GSearchWithUnionResultsOnUnionFragmentDataBuilder()..update(updates))
+          ._build();
+
+  _$GSearchWithUnionResultsOnUnionFragmentData._(
+      {required this.G__typename, this.search})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GSearchWithUnionResultsOnUnionFragmentData', 'G__typename');
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData rebuild(
+          void Function(GSearchWithUnionResultsOnUnionFragmentDataBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentDataBuilder toBuilder() =>
+      new GSearchWithUnionResultsOnUnionFragmentDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GSearchWithUnionResultsOnUnionFragmentData &&
+        G__typename == other.G__typename &&
+        search == other.search;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, G__typename.hashCode), search.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GSearchWithUnionResultsOnUnionFragmentData')
+          ..add('G__typename', G__typename)
+          ..add('search', search))
+        .toString();
+  }
+}
+
+class GSearchWithUnionResultsOnUnionFragmentDataBuilder
+    implements
+        Builder<GSearchWithUnionResultsOnUnionFragmentData,
+            GSearchWithUnionResultsOnUnionFragmentDataBuilder> {
+  _$GSearchWithUnionResultsOnUnionFragmentData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  ListBuilder<GSearchWithUnionResultsOnUnionFragmentData_search?>? _search;
+  ListBuilder<GSearchWithUnionResultsOnUnionFragmentData_search?> get search =>
+      _$this._search ??=
+          new ListBuilder<GSearchWithUnionResultsOnUnionFragmentData_search?>();
+  set search(
+          ListBuilder<GSearchWithUnionResultsOnUnionFragmentData_search?>?
+              search) =>
+      _$this._search = search;
+
+  GSearchWithUnionResultsOnUnionFragmentDataBuilder() {
+    GSearchWithUnionResultsOnUnionFragmentData._initializeBuilder(this);
+  }
+
+  GSearchWithUnionResultsOnUnionFragmentDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _search = $v.search?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GSearchWithUnionResultsOnUnionFragmentData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSearchWithUnionResultsOnUnionFragmentData;
+  }
+
+  @override
+  void update(
+      void Function(GSearchWithUnionResultsOnUnionFragmentDataBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData build() => _build();
+
+  _$GSearchWithUnionResultsOnUnionFragmentData _build() {
+    _$GSearchWithUnionResultsOnUnionFragmentData _$result;
+    try {
+      _$result = _$v ??
+          new _$GSearchWithUnionResultsOnUnionFragmentData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GSearchWithUnionResultsOnUnionFragmentData', 'G__typename'),
+              search: _search?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'search';
+        _search?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GSearchWithUnionResultsOnUnionFragmentData',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentData_search__base
+    extends GSearchWithUnionResultsOnUnionFragmentData_search__base {
+  @override
+  final String G__typename;
+
+  factory _$GSearchWithUnionResultsOnUnionFragmentData_search__base(
+          [void Function(
+                  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder)?
+              updates]) =>
+      (new GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__base._(
+      {required this.G__typename})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GSearchWithUnionResultsOnUnionFragmentData_search__base',
+        'G__typename');
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__base rebuild(
+          void Function(
+                  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder toBuilder() =>
+      new GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GSearchWithUnionResultsOnUnionFragmentData_search__base &&
+        G__typename == other.G__typename;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, G__typename.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GSearchWithUnionResultsOnUnionFragmentData_search__base')
+          ..add('G__typename', G__typename))
+        .toString();
+  }
+}
+
+class GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder
+    implements
+        Builder<GSearchWithUnionResultsOnUnionFragmentData_search__base,
+            GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder> {
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__base? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder() {
+    GSearchWithUnionResultsOnUnionFragmentData_search__base._initializeBuilder(
+        this);
+  }
+
+  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GSearchWithUnionResultsOnUnionFragmentData_search__base other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSearchWithUnionResultsOnUnionFragmentData_search__base;
+  }
+
+  @override
+  void update(
+      void Function(
+              GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__base build() => _build();
+
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__base _build() {
+    final _$result = _$v ??
+        new _$GSearchWithUnionResultsOnUnionFragmentData_search__base._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GSearchWithUnionResultsOnUnionFragmentData_search__base',
+                'G__typename'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+    extends GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult {
+  @override
+  final String G__typename;
+
+  factory _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult(
+          [void Function(
+                  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder)?
+              updates]) =>
+      (new GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult._(
+      {required this.G__typename})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult',
+        'G__typename');
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult rebuild(
+          void Function(
+                  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder
+      toBuilder() =>
+          new GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult &&
+        G__typename == other.G__typename;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, G__typename.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult')
+          ..add('G__typename', G__typename))
+        .toString();
+  }
+}
+
+class GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder
+    implements
+        Builder<
+            GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
+            GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder> {
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder() {
+    GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+        ._initializeBuilder(this);
+  }
+
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult;
+  }
+
+  @override
+  void update(
+      void Function(
+              GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult build() =>
+      _build();
+
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult _build() {
+    final _$result = _$v ??
+        new _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+                ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult',
+                'G__typename'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GsearchResultsFragmentData__base
+    extends GsearchResultsFragmentData__base {
+  @override
+  final String G__typename;
+
+  factory _$GsearchResultsFragmentData__base(
+          [void Function(GsearchResultsFragmentData__baseBuilder)? updates]) =>
+      (new GsearchResultsFragmentData__baseBuilder()..update(updates))._build();
+
+  _$GsearchResultsFragmentData__base._({required this.G__typename})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GsearchResultsFragmentData__base', 'G__typename');
+  }
+
+  @override
+  GsearchResultsFragmentData__base rebuild(
+          void Function(GsearchResultsFragmentData__baseBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GsearchResultsFragmentData__baseBuilder toBuilder() =>
+      new GsearchResultsFragmentData__baseBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GsearchResultsFragmentData__base &&
+        G__typename == other.G__typename;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, G__typename.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GsearchResultsFragmentData__base')
+          ..add('G__typename', G__typename))
+        .toString();
+  }
+}
+
+class GsearchResultsFragmentData__baseBuilder
+    implements
+        Builder<GsearchResultsFragmentData__base,
+            GsearchResultsFragmentData__baseBuilder> {
+  _$GsearchResultsFragmentData__base? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GsearchResultsFragmentData__baseBuilder() {
+    GsearchResultsFragmentData__base._initializeBuilder(this);
+  }
+
+  GsearchResultsFragmentData__baseBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GsearchResultsFragmentData__base other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GsearchResultsFragmentData__base;
+  }
+
+  @override
+  void update(void Function(GsearchResultsFragmentData__baseBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GsearchResultsFragmentData__base build() => _build();
+
+  _$GsearchResultsFragmentData__base _build() {
+    final _$result = _$v ??
+        new _$GsearchResultsFragmentData__base._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GsearchResultsFragmentData__base', 'G__typename'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GsearchResultsFragmentData__asHuman
+    extends GsearchResultsFragmentData__asHuman {
+  @override
+  final String G__typename;
+  @override
+  final String name;
+  @override
+  final String? homePlanet;
+
+  factory _$GsearchResultsFragmentData__asHuman(
+          [void Function(GsearchResultsFragmentData__asHumanBuilder)?
+              updates]) =>
+      (new GsearchResultsFragmentData__asHumanBuilder()..update(updates))
+          ._build();
+
+  _$GsearchResultsFragmentData__asHuman._(
+      {required this.G__typename, required this.name, this.homePlanet})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GsearchResultsFragmentData__asHuman', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'GsearchResultsFragmentData__asHuman', 'name');
+  }
+
+  @override
+  GsearchResultsFragmentData__asHuman rebuild(
+          void Function(GsearchResultsFragmentData__asHumanBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GsearchResultsFragmentData__asHumanBuilder toBuilder() =>
+      new GsearchResultsFragmentData__asHumanBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GsearchResultsFragmentData__asHuman &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        homePlanet == other.homePlanet;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc(0, G__typename.hashCode), name.hashCode), homePlanet.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GsearchResultsFragmentData__asHuman')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('homePlanet', homePlanet))
+        .toString();
+  }
+}
+
+class GsearchResultsFragmentData__asHumanBuilder
+    implements
+        Builder<GsearchResultsFragmentData__asHuman,
+            GsearchResultsFragmentData__asHumanBuilder> {
+  _$GsearchResultsFragmentData__asHuman? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _homePlanet;
+  String? get homePlanet => _$this._homePlanet;
+  set homePlanet(String? homePlanet) => _$this._homePlanet = homePlanet;
+
+  GsearchResultsFragmentData__asHumanBuilder() {
+    GsearchResultsFragmentData__asHuman._initializeBuilder(this);
+  }
+
+  GsearchResultsFragmentData__asHumanBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _homePlanet = $v.homePlanet;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GsearchResultsFragmentData__asHuman other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GsearchResultsFragmentData__asHuman;
+  }
+
+  @override
+  void update(
+      void Function(GsearchResultsFragmentData__asHumanBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GsearchResultsFragmentData__asHuman build() => _build();
+
+  _$GsearchResultsFragmentData__asHuman _build() {
+    final _$result = _$v ??
+        new _$GsearchResultsFragmentData__asHuman._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GsearchResultsFragmentData__asHuman', 'G__typename'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'GsearchResultsFragmentData__asHuman', 'name'),
+            homePlanet: homePlanet);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GsearchResultsFragmentData__asDroid
+    extends GsearchResultsFragmentData__asDroid {
+  @override
+  final String G__typename;
+  @override
+  final String name;
+  @override
+  final String? primaryFunction;
+
+  factory _$GsearchResultsFragmentData__asDroid(
+          [void Function(GsearchResultsFragmentData__asDroidBuilder)?
+              updates]) =>
+      (new GsearchResultsFragmentData__asDroidBuilder()..update(updates))
+          ._build();
+
+  _$GsearchResultsFragmentData__asDroid._(
+      {required this.G__typename, required this.name, this.primaryFunction})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GsearchResultsFragmentData__asDroid', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'GsearchResultsFragmentData__asDroid', 'name');
+  }
+
+  @override
+  GsearchResultsFragmentData__asDroid rebuild(
+          void Function(GsearchResultsFragmentData__asDroidBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GsearchResultsFragmentData__asDroidBuilder toBuilder() =>
+      new GsearchResultsFragmentData__asDroidBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GsearchResultsFragmentData__asDroid &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        primaryFunction == other.primaryFunction;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc($jc(0, G__typename.hashCode), name.hashCode),
+        primaryFunction.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GsearchResultsFragmentData__asDroid')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('primaryFunction', primaryFunction))
+        .toString();
+  }
+}
+
+class GsearchResultsFragmentData__asDroidBuilder
+    implements
+        Builder<GsearchResultsFragmentData__asDroid,
+            GsearchResultsFragmentData__asDroidBuilder> {
+  _$GsearchResultsFragmentData__asDroid? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _primaryFunction;
+  String? get primaryFunction => _$this._primaryFunction;
+  set primaryFunction(String? primaryFunction) =>
+      _$this._primaryFunction = primaryFunction;
+
+  GsearchResultsFragmentData__asDroidBuilder() {
+    GsearchResultsFragmentData__asDroid._initializeBuilder(this);
+  }
+
+  GsearchResultsFragmentData__asDroidBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _primaryFunction = $v.primaryFunction;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GsearchResultsFragmentData__asDroid other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GsearchResultsFragmentData__asDroid;
+  }
+
+  @override
+  void update(
+      void Function(GsearchResultsFragmentData__asDroidBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GsearchResultsFragmentData__asDroid build() => _build();
+
+  _$GsearchResultsFragmentData__asDroid _build() {
+    final _$result = _$v ??
+        new _$GsearchResultsFragmentData__asDroid._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GsearchResultsFragmentData__asDroid', 'G__typename'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'GsearchResultsFragmentData__asDroid', 'name'),
+            primaryFunction: primaryFunction);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GsearchResultsFragmentData__asStarship
+    extends GsearchResultsFragmentData__asStarship {
+  @override
+  final String G__typename;
+  @override
+  final String name;
+  @override
+  final double? length;
+
+  factory _$GsearchResultsFragmentData__asStarship(
+          [void Function(GsearchResultsFragmentData__asStarshipBuilder)?
+              updates]) =>
+      (new GsearchResultsFragmentData__asStarshipBuilder()..update(updates))
+          ._build();
+
+  _$GsearchResultsFragmentData__asStarship._(
+      {required this.G__typename, required this.name, this.length})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GsearchResultsFragmentData__asStarship', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'GsearchResultsFragmentData__asStarship', 'name');
+  }
+
+  @override
+  GsearchResultsFragmentData__asStarship rebuild(
+          void Function(GsearchResultsFragmentData__asStarshipBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GsearchResultsFragmentData__asStarshipBuilder toBuilder() =>
+      new GsearchResultsFragmentData__asStarshipBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GsearchResultsFragmentData__asStarship &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        length == other.length;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc($jc(0, G__typename.hashCode), name.hashCode), length.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GsearchResultsFragmentData__asStarship')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('length', length))
+        .toString();
+  }
+}
+
+class GsearchResultsFragmentData__asStarshipBuilder
+    implements
+        Builder<GsearchResultsFragmentData__asStarship,
+            GsearchResultsFragmentData__asStarshipBuilder> {
+  _$GsearchResultsFragmentData__asStarship? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  double? _length;
+  double? get length => _$this._length;
+  set length(double? length) => _$this._length = length;
+
+  GsearchResultsFragmentData__asStarshipBuilder() {
+    GsearchResultsFragmentData__asStarship._initializeBuilder(this);
+  }
+
+  GsearchResultsFragmentData__asStarshipBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _length = $v.length;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GsearchResultsFragmentData__asStarship other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GsearchResultsFragmentData__asStarship;
+  }
+
+  @override
+  void update(
+      void Function(GsearchResultsFragmentData__asStarshipBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GsearchResultsFragmentData__asStarship build() => _build();
+
+  _$GsearchResultsFragmentData__asStarship _build() {
+    final _$result = _$v ??
+        new _$GsearchResultsFragmentData__asStarship._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GsearchResultsFragmentData__asStarship', 'G__typename'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'GsearchResultsFragmentData__asStarship', 'name'),
             length: length);
     replace(_$result);
     return _$result;

@@ -69,6 +69,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(GSearchWithUnionResultsOnTypedFragmentsData_search__base.serializer)
       ..add(GSearchWithUnionResultsOnTypedFragmentsVars.serializer)
+      ..add(GSearchWithUnionResultsOnUnionFragment.serializer)
+      ..add(GSearchWithUnionResultsOnUnionFragmentData.serializer)
+      ..add(GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+          .serializer)
+      ..add(GSearchWithUnionResultsOnUnionFragmentData_search__base.serializer)
+      ..add(GSearchWithUnionResultsOnUnionFragmentVars.serializer)
       ..add(GSearchWithUnionResultsVars.serializer)
       ..add(GcomparisonFieldsData.serializer)
       ..add(GcomparisonFieldsData_friendsConnection.serializer)
@@ -91,6 +97,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GhumanFieldsFragmentData_friends__asHuman.serializer)
       ..add(GhumanFieldsFragmentData_friends__base.serializer)
       ..add(GhumanFieldsFragmentVars.serializer)
+      ..add(GsearchResultsFragmentData__asDroid.serializer)
+      ..add(GsearchResultsFragmentData__asHuman.serializer)
+      ..add(GsearchResultsFragmentData__asStarship.serializer)
+      ..add(GsearchResultsFragmentData__base.serializer)
+      ..add(GsearchResultsFragmentVars.serializer)
       ..add(GstarshipFieldsFragmentData.serializer)
       ..add(GstarshipFieldsFragmentVars.serializer)
       ..addBuilderFactory(
@@ -137,6 +148,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GSearchWithUnionResultsOnTypedFragmentsData_search?>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType.nullable(
+                GSearchWithUnionResultsOnUnionFragmentData_search)
+          ]),
+          () => new ListBuilder<
+              GSearchWithUnionResultsOnUnionFragmentData_search?>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType.nullable(

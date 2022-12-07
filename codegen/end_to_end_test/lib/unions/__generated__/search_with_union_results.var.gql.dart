@@ -57,6 +57,53 @@ abstract class GSearchWithUnionResultsOnTypedFragmentsVars
       );
 }
 
+abstract class GSearchWithUnionResultsOnUnionFragmentVars
+    implements
+        Built<GSearchWithUnionResultsOnUnionFragmentVars,
+            GSearchWithUnionResultsOnUnionFragmentVarsBuilder> {
+  GSearchWithUnionResultsOnUnionFragmentVars._();
+
+  factory GSearchWithUnionResultsOnUnionFragmentVars(
+      [Function(GSearchWithUnionResultsOnUnionFragmentVarsBuilder b)
+          updates]) = _$GSearchWithUnionResultsOnUnionFragmentVars;
+
+  String get text;
+  static Serializer<GSearchWithUnionResultsOnUnionFragmentVars>
+      get serializer => _$gSearchWithUnionResultsOnUnionFragmentVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GSearchWithUnionResultsOnUnionFragmentVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GSearchWithUnionResultsOnUnionFragmentVars? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GSearchWithUnionResultsOnUnionFragmentVars.serializer,
+        json,
+      );
+}
+
+abstract class GsearchResultsFragmentVars
+    implements
+        Built<GsearchResultsFragmentVars, GsearchResultsFragmentVarsBuilder> {
+  GsearchResultsFragmentVars._();
+
+  factory GsearchResultsFragmentVars(
+          [Function(GsearchResultsFragmentVarsBuilder b) updates]) =
+      _$GsearchResultsFragmentVars;
+
+  static Serializer<GsearchResultsFragmentVars> get serializer =>
+      _$gsearchResultsFragmentVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GsearchResultsFragmentVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GsearchResultsFragmentVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GsearchResultsFragmentVars.serializer,
+        json,
+      );
+}
+
 abstract class GhumanFieldsFragmentVars
     implements
         Built<GhumanFieldsFragmentVars, GhumanFieldsFragmentVarsBuilder> {

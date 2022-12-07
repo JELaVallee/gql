@@ -87,6 +87,8 @@ import 'package:end_to_end_test/unions/__generated__/search_with_union_results.d
     show
         GSearchWithUnionResultsData_search,
         GSearchWithUnionResultsOnTypedFragmentsData_search,
+        GSearchWithUnionResultsOnUnionFragmentData_search,
+        GsearchResultsFragmentData,
         GSearchWithUnionResultsData,
         GSearchWithUnionResultsData_search__asDroid,
         GSearchWithUnionResultsData_search__asHuman,
@@ -97,13 +99,25 @@ import 'package:end_to_end_test/unions/__generated__/search_with_union_results.d
         GSearchWithUnionResultsOnTypedFragmentsData_search__asHuman,
         GSearchWithUnionResultsOnTypedFragmentsData_search__asStarship,
         GSearchWithUnionResultsOnTypedFragmentsData_search__base,
+        GSearchWithUnionResultsOnUnionFragmentData,
+        GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
+        GSearchWithUnionResultsOnUnionFragmentData_search__base,
+        GsearchResultsFragmentData__asDroid,
+        GsearchResultsFragmentData__asHuman,
+        GsearchResultsFragmentData__asStarship,
+        GsearchResultsFragmentData__base,
         GstarshipFieldsFragmentData;
 import 'package:end_to_end_test/unions/__generated__/search_with_union_results.req.gql.dart'
-    show GSearchWithUnionResults, GSearchWithUnionResultsOnTypedFragments;
+    show
+        GSearchWithUnionResults,
+        GSearchWithUnionResultsOnTypedFragments,
+        GSearchWithUnionResultsOnUnionFragment;
 import 'package:end_to_end_test/unions/__generated__/search_with_union_results.var.gql.dart'
     show
         GSearchWithUnionResultsOnTypedFragmentsVars,
+        GSearchWithUnionResultsOnUnionFragmentVars,
         GSearchWithUnionResultsVars,
+        GsearchResultsFragmentVars,
         GstarshipFieldsFragmentVars;
 import 'package:end_to_end_test/variables/__generated__/create_review.data.gql.dart'
     show GCreateReviewData, GCreateReviewData_createReview;
@@ -129,9 +143,11 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(GHeroForEpisodeData_hero.serializer)
   ..add(GSearchWithUnionResultsData_search.serializer)
   ..add(GSearchWithUnionResultsOnTypedFragmentsData_search.serializer)
+  ..add(GSearchWithUnionResultsOnUnionFragmentData_search.serializer)
   ..add(GheroFieldsFragmentData.serializer)
   ..add(GheroFieldsFragmentData__asHuman_friends.serializer)
   ..add(GhumanFieldsFragmentData_friends.serializer)
+  ..add(GsearchResultsFragmentData.serializer)
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
   GAliasedHero,
@@ -193,6 +209,11 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GSearchWithUnionResultsOnTypedFragmentsData_search__asStarship,
   GSearchWithUnionResultsOnTypedFragmentsData_search__base,
   GSearchWithUnionResultsOnTypedFragmentsVars,
+  GSearchWithUnionResultsOnUnionFragment,
+  GSearchWithUnionResultsOnUnionFragmentData,
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
+  GSearchWithUnionResultsOnUnionFragmentData_search__base,
+  GSearchWithUnionResultsOnUnionFragmentVars,
   GSearchWithUnionResultsVars,
   GcomparisonFieldsData,
   GcomparisonFieldsData_friendsConnection,
@@ -215,6 +236,11 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GhumanFieldsFragmentData_friends__asHuman,
   GhumanFieldsFragmentData_friends__base,
   GhumanFieldsFragmentVars,
+  GsearchResultsFragmentData__asDroid,
+  GsearchResultsFragmentData__asHuman,
+  GsearchResultsFragmentData__asStarship,
+  GsearchResultsFragmentData__base,
+  GsearchResultsFragmentVars,
   GstarshipFieldsFragmentData,
   GstarshipFieldsFragmentVars,
 ])
