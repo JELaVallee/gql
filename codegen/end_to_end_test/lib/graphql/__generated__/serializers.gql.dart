@@ -87,7 +87,6 @@ import 'package:end_to_end_test/unions/__generated__/search_with_union_results.d
     show
         GSearchWithUnionResultsData_search,
         GSearchWithUnionResultsOnTypedFragmentsData_search,
-        GSearchWithUnionResultsOnUnionFragmentData_search,
         GsearchResultsFragmentData,
         GSearchWithUnionResultsData,
         GSearchWithUnionResultsData_search__asDroid,
@@ -100,8 +99,7 @@ import 'package:end_to_end_test/unions/__generated__/search_with_union_results.d
         GSearchWithUnionResultsOnTypedFragmentsData_search__asStarship,
         GSearchWithUnionResultsOnTypedFragmentsData_search__base,
         GSearchWithUnionResultsOnUnionFragmentData,
-        GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
-        GSearchWithUnionResultsOnUnionFragmentData_search__base,
+        GSearchWithUnionResultsOnUnionFragmentData_search,
         GsearchResultsFragmentData__asDroid,
         GsearchResultsFragmentData__asHuman,
         GsearchResultsFragmentData__asStarship,
@@ -143,7 +141,6 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(GHeroForEpisodeData_hero.serializer)
   ..add(GSearchWithUnionResultsData_search.serializer)
   ..add(GSearchWithUnionResultsOnTypedFragmentsData_search.serializer)
-  ..add(GSearchWithUnionResultsOnUnionFragmentData_search.serializer)
   ..add(GheroFieldsFragmentData.serializer)
   ..add(GheroFieldsFragmentData__asHuman_friends.serializer)
   ..add(GhumanFieldsFragmentData_friends.serializer)
@@ -211,8 +208,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GSearchWithUnionResultsOnTypedFragmentsVars,
   GSearchWithUnionResultsOnUnionFragment,
   GSearchWithUnionResultsOnUnionFragmentData,
-  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
-  GSearchWithUnionResultsOnUnionFragmentData_search__base,
+  GSearchWithUnionResultsOnUnionFragmentData_search,
   GSearchWithUnionResultsOnUnionFragmentVars,
   GSearchWithUnionResultsVars,
   GcomparisonFieldsData,

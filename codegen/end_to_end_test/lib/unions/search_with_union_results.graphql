@@ -31,9 +31,7 @@ query SearchWithUnionResultsOnTypedFragments($text: String!) {
 
 query SearchWithUnionResultsOnUnionFragment($text: String!) {
   search(text: $text) {
-    ...on SearchResult {
-      ...searchResultsFragment
-    }
+    ...searchResultsFragment
   }
 }
 
