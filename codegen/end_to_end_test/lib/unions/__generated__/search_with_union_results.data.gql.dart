@@ -447,27 +447,19 @@ abstract class GSearchWithUnionResultsOnUnionFragmentData
       );
 }
 
-abstract class GSearchWithUnionResultsOnUnionFragmentData_search
-    implements
-        Built<GSearchWithUnionResultsOnUnionFragmentData_search,
-            GSearchWithUnionResultsOnUnionFragmentData_searchBuilder>,
-        GsearchResultsFragment {
-  GSearchWithUnionResultsOnUnionFragmentData_search._();
-
-  factory GSearchWithUnionResultsOnUnionFragmentData_search(
-      [Function(GSearchWithUnionResultsOnUnionFragmentData_searchBuilder b)
-          updates]) = _$GSearchWithUnionResultsOnUnionFragmentData_search;
-
-  static void _initializeBuilder(
-          GSearchWithUnionResultsOnUnionFragmentData_searchBuilder b) =>
-      b..G__typename = 'SearchResult';
-  @override
+abstract class GSearchWithUnionResultsOnUnionFragmentData_search {
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   static Serializer<GSearchWithUnionResultsOnUnionFragmentData_search>
-      get serializer =>
-          _$gSearchWithUnionResultsOnUnionFragmentDataSearchSerializer;
-  @override
+      get serializer => _i2.InlineFragmentSerializer<
+              GSearchWithUnionResultsOnUnionFragmentData_search>(
+            'GSearchWithUnionResultsOnUnionFragmentData_search',
+            GSearchWithUnionResultsOnUnionFragmentData_search__base,
+            {
+              'SearchResult':
+                  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+            },
+          );
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GSearchWithUnionResultsOnUnionFragmentData_search.serializer,
         this,
@@ -478,6 +470,80 @@ abstract class GSearchWithUnionResultsOnUnionFragmentData_search
         GSearchWithUnionResultsOnUnionFragmentData_search.serializer,
         json,
       );
+}
+
+abstract class GSearchWithUnionResultsOnUnionFragmentData_search__base
+    implements
+        Built<GSearchWithUnionResultsOnUnionFragmentData_search__base,
+            GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder>,
+        GSearchWithUnionResultsOnUnionFragmentData_search {
+  GSearchWithUnionResultsOnUnionFragmentData_search__base._();
+
+  factory GSearchWithUnionResultsOnUnionFragmentData_search__base(
+      [Function(
+              GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder b)
+          updates]) = _$GSearchWithUnionResultsOnUnionFragmentData_search__base;
+
+  static void _initializeBuilder(
+          GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder b) =>
+      b..G__typename = 'SearchResult';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  static Serializer<GSearchWithUnionResultsOnUnionFragmentData_search__base>
+      get serializer =>
+          _$gSearchWithUnionResultsOnUnionFragmentDataSearchBaseSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GSearchWithUnionResultsOnUnionFragmentData_search__base.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GSearchWithUnionResultsOnUnionFragmentData_search__base? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GSearchWithUnionResultsOnUnionFragmentData_search__base.serializer,
+        json,
+      );
+}
+
+abstract class GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+    implements
+        Built<GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
+            GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder>,
+        GSearchWithUnionResultsOnUnionFragmentData_search,
+        GsearchResultsFragment {
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult._();
+
+  factory GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult(
+          [Function(
+                  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder
+                      b)
+              updates]) =
+      _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult;
+
+  static void _initializeBuilder(
+          GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder
+              b) =>
+      b..G__typename = 'SearchResult';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  static Serializer<
+          GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult>
+      get serializer =>
+          _$gSearchWithUnionResultsOnUnionFragmentDataSearchAsSearchResultSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+                .serializer,
+            json,
+          );
 }
 
 abstract class GsearchResultsFragment {

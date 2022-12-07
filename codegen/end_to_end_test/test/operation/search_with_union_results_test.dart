@@ -122,16 +122,26 @@ void main() {
         final searchResults =
             GSearchWithUnionResultsOnUnionFragmentData.fromJson(jsonResults);
 
-        /// TODO: @JELaVallee - Current scenario is not exapanding the `__asHuman` etc. sub-Types
+        /// TODO: @JELaVallee - Current scenario is not exapanding the `__asHuman` etc. sub-Types, just `__base`
         final humanResult = searchResults?.search
-            ?.whereType<GSearchWithUnionResultsOnUnionFragmentData_search>()
+            ?.whereType<
+                GSearchWithUnionResultsOnUnionFragmentData_search__base>()
             .first;
-        final droidResult = searchResults?.search
-            ?.whereType<GSearchWithUnionResultsOnUnionFragmentData_search>()
-            .first;
-        final starshipResult = searchResults?.search
-            ?.whereType<GSearchWithUnionResultsOnUnionFragmentData_search>()
-            .first;
+
+        /// NOTE: @JELaVallee - These sub-types should be generated here _and_ at the FragmentDefinition level
+        /// TODO: @JELaVallee - Add tests for de/seriallizing between Query-scope types and FragmentDefinition-scope types of the same Interface
+        // final humanResult = searchResults?.search
+        //     ?.whereType<
+        //         GSearchWithUnionResultsOnUnionFragmentData_search__asHuman>()
+        //     .first;
+        // final droidResult = searchResults?.search
+        //     ?.whereType<
+        //         GSearchWithUnionResultsOnUnionFragmentData_search__asDroid>()
+        //     .first;
+        // final starshipResult = searchResults?.search
+        //     ?.whereType<
+        //         GSearchWithUnionResultsOnUnionFragmentData_search__asStarship>()
+        //     .first;
 
         // expect(humanResult?.name, equals("Obiwan"));
         // expect(humanResult?.homePlanet, equals("Stewjon"));

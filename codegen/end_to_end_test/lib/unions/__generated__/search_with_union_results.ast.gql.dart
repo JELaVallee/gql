@@ -207,9 +207,19 @@ const SearchWithUnionResultsOnUnionFragment = _i1.OperationDefinitionNode(
       ],
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
-        _i1.FragmentSpreadNode(
-          name: _i1.NameNode(value: 'searchResultsFragment'),
+        _i1.InlineFragmentNode(
+          typeCondition: _i1.TypeConditionNode(
+              on: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'SearchResult'),
+            isNonNull: false,
+          )),
           directives: [],
+          selectionSet: _i1.SelectionSetNode(selections: [
+            _i1.FragmentSpreadNode(
+              name: _i1.NameNode(value: 'searchResultsFragment'),
+              directives: [],
+            )
+          ]),
         )
       ]),
     )

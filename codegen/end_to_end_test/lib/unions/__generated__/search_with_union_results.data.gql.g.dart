@@ -39,9 +39,12 @@ Serializer<GSearchWithUnionResultsOnTypedFragmentsData_search__asStarship>
 Serializer<GSearchWithUnionResultsOnUnionFragmentData>
     _$gSearchWithUnionResultsOnUnionFragmentDataSerializer =
     new _$GSearchWithUnionResultsOnUnionFragmentDataSerializer();
-Serializer<GSearchWithUnionResultsOnUnionFragmentData_search>
-    _$gSearchWithUnionResultsOnUnionFragmentDataSearchSerializer =
-    new _$GSearchWithUnionResultsOnUnionFragmentData_searchSerializer();
+Serializer<GSearchWithUnionResultsOnUnionFragmentData_search__base>
+    _$gSearchWithUnionResultsOnUnionFragmentDataSearchBaseSerializer =
+    new _$GSearchWithUnionResultsOnUnionFragmentData_search__baseSerializer();
+Serializer<GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult>
+    _$gSearchWithUnionResultsOnUnionFragmentDataSearchAsSearchResultSerializer =
+    new _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultSerializer();
 Serializer<GsearchResultsFragmentData__base>
     _$gsearchResultsFragmentDataBaseSerializer =
     new _$GsearchResultsFragmentData__baseSerializer();
@@ -740,21 +743,22 @@ class _$GSearchWithUnionResultsOnUnionFragmentDataSerializer
   }
 }
 
-class _$GSearchWithUnionResultsOnUnionFragmentData_searchSerializer
+class _$GSearchWithUnionResultsOnUnionFragmentData_search__baseSerializer
     implements
         StructuredSerializer<
-            GSearchWithUnionResultsOnUnionFragmentData_search> {
+            GSearchWithUnionResultsOnUnionFragmentData_search__base> {
   @override
   final Iterable<Type> types = const [
-    GSearchWithUnionResultsOnUnionFragmentData_search,
-    _$GSearchWithUnionResultsOnUnionFragmentData_search
+    GSearchWithUnionResultsOnUnionFragmentData_search__base,
+    _$GSearchWithUnionResultsOnUnionFragmentData_search__base
   ];
   @override
-  final String wireName = 'GSearchWithUnionResultsOnUnionFragmentData_search';
+  final String wireName =
+      'GSearchWithUnionResultsOnUnionFragmentData_search__base';
 
   @override
   Iterable<Object?> serialize(Serializers serializers,
-      GSearchWithUnionResultsOnUnionFragmentData_search object,
+      GSearchWithUnionResultsOnUnionFragmentData_search__base object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -766,11 +770,61 @@ class _$GSearchWithUnionResultsOnUnionFragmentData_searchSerializer
   }
 
   @override
-  GSearchWithUnionResultsOnUnionFragmentData_search deserialize(
+  GSearchWithUnionResultsOnUnionFragmentData_search__base deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GSearchWithUnionResultsOnUnionFragmentData_searchBuilder();
+        new GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultSerializer
+    implements
+        StructuredSerializer<
+            GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult> {
+  @override
+  final Iterable<Type> types = const [
+    GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
+    _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+  ];
+  @override
+  final String wireName =
+      'GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2588,42 +2642,44 @@ class GSearchWithUnionResultsOnUnionFragmentDataBuilder
   }
 }
 
-class _$GSearchWithUnionResultsOnUnionFragmentData_search
-    extends GSearchWithUnionResultsOnUnionFragmentData_search {
+class _$GSearchWithUnionResultsOnUnionFragmentData_search__base
+    extends GSearchWithUnionResultsOnUnionFragmentData_search__base {
   @override
   final String G__typename;
 
-  factory _$GSearchWithUnionResultsOnUnionFragmentData_search(
+  factory _$GSearchWithUnionResultsOnUnionFragmentData_search__base(
           [void Function(
-                  GSearchWithUnionResultsOnUnionFragmentData_searchBuilder)?
+                  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder)?
               updates]) =>
-      (new GSearchWithUnionResultsOnUnionFragmentData_searchBuilder()
+      (new GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder()
             ..update(updates))
           ._build();
 
-  _$GSearchWithUnionResultsOnUnionFragmentData_search._(
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__base._(
       {required this.G__typename})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GSearchWithUnionResultsOnUnionFragmentData_search', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GSearchWithUnionResultsOnUnionFragmentData_search__base',
+        'G__typename');
   }
 
   @override
-  GSearchWithUnionResultsOnUnionFragmentData_search rebuild(
+  GSearchWithUnionResultsOnUnionFragmentData_search__base rebuild(
           void Function(
-                  GSearchWithUnionResultsOnUnionFragmentData_searchBuilder)
+                  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GSearchWithUnionResultsOnUnionFragmentData_searchBuilder toBuilder() =>
-      new GSearchWithUnionResultsOnUnionFragmentData_searchBuilder()
+  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder toBuilder() =>
+      new GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder()
         ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GSearchWithUnionResultsOnUnionFragmentData_search &&
+    return other is GSearchWithUnionResultsOnUnionFragmentData_search__base &&
         G__typename == other.G__typename;
   }
 
@@ -2635,27 +2691,28 @@ class _$GSearchWithUnionResultsOnUnionFragmentData_search
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GSearchWithUnionResultsOnUnionFragmentData_search')
+            r'GSearchWithUnionResultsOnUnionFragmentData_search__base')
           ..add('G__typename', G__typename))
         .toString();
   }
 }
 
-class GSearchWithUnionResultsOnUnionFragmentData_searchBuilder
+class GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder
     implements
-        Builder<GSearchWithUnionResultsOnUnionFragmentData_search,
-            GSearchWithUnionResultsOnUnionFragmentData_searchBuilder> {
-  _$GSearchWithUnionResultsOnUnionFragmentData_search? _$v;
+        Builder<GSearchWithUnionResultsOnUnionFragmentData_search__base,
+            GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder> {
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__base? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  GSearchWithUnionResultsOnUnionFragmentData_searchBuilder() {
-    GSearchWithUnionResultsOnUnionFragmentData_search._initializeBuilder(this);
+  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder() {
+    GSearchWithUnionResultsOnUnionFragmentData_search__base._initializeBuilder(
+        this);
   }
 
-  GSearchWithUnionResultsOnUnionFragmentData_searchBuilder get _$this {
+  GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -2665,27 +2722,144 @@ class GSearchWithUnionResultsOnUnionFragmentData_searchBuilder
   }
 
   @override
-  void replace(GSearchWithUnionResultsOnUnionFragmentData_search other) {
+  void replace(GSearchWithUnionResultsOnUnionFragmentData_search__base other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GSearchWithUnionResultsOnUnionFragmentData_search;
+    _$v = other as _$GSearchWithUnionResultsOnUnionFragmentData_search__base;
   }
 
   @override
   void update(
-      void Function(GSearchWithUnionResultsOnUnionFragmentData_searchBuilder)?
+      void Function(
+              GSearchWithUnionResultsOnUnionFragmentData_search__baseBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GSearchWithUnionResultsOnUnionFragmentData_search build() => _build();
+  GSearchWithUnionResultsOnUnionFragmentData_search__base build() => _build();
 
-  _$GSearchWithUnionResultsOnUnionFragmentData_search _build() {
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__base _build() {
     final _$result = _$v ??
-        new _$GSearchWithUnionResultsOnUnionFragmentData_search._(
+        new _$GSearchWithUnionResultsOnUnionFragmentData_search__base._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
-                r'GSearchWithUnionResultsOnUnionFragmentData_search',
+                r'GSearchWithUnionResultsOnUnionFragmentData_search__base',
+                'G__typename'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+    extends GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult {
+  @override
+  final String G__typename;
+
+  factory _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult(
+          [void Function(
+                  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder)?
+              updates]) =>
+      (new GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult._(
+      {required this.G__typename})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult',
+        'G__typename');
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult rebuild(
+          void Function(
+                  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder
+      toBuilder() =>
+          new GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult &&
+        G__typename == other.G__typename;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, G__typename.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult')
+          ..add('G__typename', G__typename))
+        .toString();
+  }
+}
+
+class GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder
+    implements
+        Builder<
+            GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult,
+            GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder> {
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder() {
+    GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+        ._initializeBuilder(this);
+  }
+
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult;
+  }
+
+  @override
+  void update(
+      void Function(
+              GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResultBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult build() =>
+      _build();
+
+  _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult _build() {
+    final _$result = _$v ??
+        new _$GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult
+                ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GSearchWithUnionResultsOnUnionFragmentData_search__asSearchResult',
                 'G__typename'));
     replace(_$result);
     return _$result;
