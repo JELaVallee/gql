@@ -83,6 +83,18 @@ import 'package:end_to_end_test/scalars/__generated__/review_with_date.req.gql.d
     show GReviewWithDate;
 import 'package:end_to_end_test/scalars/__generated__/review_with_date.var.gql.dart'
     show GReviewWithDateVars;
+import 'package:end_to_end_test/unions/__generated__/search_with_union_results.data.gql.dart'
+    show
+        GSearchWithUnionResultsData_search,
+        GSearchWithUnionResultsData,
+        GSearchWithUnionResultsData_search__asDroid,
+        GSearchWithUnionResultsData_search__asHuman,
+        GSearchWithUnionResultsData_search__asStarship,
+        GSearchWithUnionResultsData_search__base;
+import 'package:end_to_end_test/unions/__generated__/search_with_union_results.req.gql.dart'
+    show GSearchWithUnionResults;
+import 'package:end_to_end_test/unions/__generated__/search_with_union_results.var.gql.dart'
+    show GSearchWithUnionResultsVars;
 import 'package:end_to_end_test/variables/__generated__/create_review.data.gql.dart'
     show GCreateReviewData, GCreateReviewData_createReview;
 import 'package:end_to_end_test/variables/__generated__/create_review.req.gql.dart'
@@ -105,6 +117,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(DateSerializer())
   ..add(CustomFieldSerializer())
   ..add(GHeroForEpisodeData_hero.serializer)
+  ..add(GSearchWithUnionResultsData_search.serializer)
   ..add(GheroFieldsFragmentData.serializer)
   ..add(GheroFieldsFragmentData__asHuman_friends.serializer)
   ..add(GhumanFieldsFragmentData_friends.serializer)
@@ -156,6 +169,13 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GReviewWithDateData,
   GReviewWithDateData_createReview,
   GReviewWithDateVars,
+  GSearchWithUnionResults,
+  GSearchWithUnionResultsData,
+  GSearchWithUnionResultsData_search__asDroid,
+  GSearchWithUnionResultsData_search__asHuman,
+  GSearchWithUnionResultsData_search__asStarship,
+  GSearchWithUnionResultsData_search__base,
+  GSearchWithUnionResultsVars,
   GcomparisonFieldsData,
   GcomparisonFieldsData_friendsConnection,
   GcomparisonFieldsData_friendsConnection_edges,
