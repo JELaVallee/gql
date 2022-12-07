@@ -1,0 +1,47 @@
+query SearchWithUnionResults($text: String!) {
+  search(text: $text) {
+    ...on Human {
+      name
+      homePlanet
+    }
+    ...on Droid {
+      name
+      primaryFunction
+    }
+    ...on Starship {
+      name
+      length
+    }
+  }
+}
+
+## TODO: @JELaVallee - Add these in later...
+# fragment searchResultsFragment on SearchResult {
+#     ...on Human {
+#         name
+#         homePlanet
+#     }
+#     ...on Droid {
+#         name
+#         primaryFunction
+#     }
+#     ...on Starship {
+#         name
+#         length
+#     }
+# }
+
+# fragment humanFieldsFragment on Human {
+#     name
+#     homePlanet
+# }
+
+# fragment droidFieldsFragment on Droid {
+#     name
+#     primaryFunction
+# }
+
+# fragment starshipFieldsFragment on Starship {
+#     name
+#     length
+# }
