@@ -59,6 +59,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GSearchWithUnionResultsData_search__asHuman.serializer)
       ..add(GSearchWithUnionResultsData_search__asStarship.serializer)
       ..add(GSearchWithUnionResultsData_search__base.serializer)
+      ..add(GSearchWithUnionResultsOnTypedFragments.serializer)
+      ..add(GSearchWithUnionResultsOnTypedFragmentsData.serializer)
+      ..add(GSearchWithUnionResultsOnTypedFragmentsData_search__asDroid
+          .serializer)
+      ..add(GSearchWithUnionResultsOnTypedFragmentsData_search__asHuman
+          .serializer)
+      ..add(GSearchWithUnionResultsOnTypedFragmentsData_search__asStarship
+          .serializer)
+      ..add(GSearchWithUnionResultsOnTypedFragmentsData_search__base.serializer)
+      ..add(GSearchWithUnionResultsOnTypedFragmentsVars.serializer)
       ..add(GSearchWithUnionResultsVars.serializer)
       ..add(GcomparisonFieldsData.serializer)
       ..add(GcomparisonFieldsData_friendsConnection.serializer)
@@ -81,6 +91,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GhumanFieldsFragmentData_friends__asHuman.serializer)
       ..add(GhumanFieldsFragmentData_friends__base.serializer)
       ..add(GhumanFieldsFragmentVars.serializer)
+      ..add(GstarshipFieldsFragmentData.serializer)
+      ..add(GstarshipFieldsFragmentVars.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DateTime)]),
           () => new ListBuilder<DateTime>())
@@ -118,6 +130,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
             const FullType.nullable(GSearchWithUnionResultsData_search)
           ]),
           () => new ListBuilder<GSearchWithUnionResultsData_search?>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType.nullable(
+                GSearchWithUnionResultsOnTypedFragmentsData_search)
+          ]),
+          () => new ListBuilder<
+              GSearchWithUnionResultsOnTypedFragmentsData_search?>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType.nullable(

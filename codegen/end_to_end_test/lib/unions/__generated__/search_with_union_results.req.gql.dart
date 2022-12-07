@@ -41,3 +41,36 @@ abstract class GSearchWithUnionResults
         json,
       );
 }
+
+abstract class GSearchWithUnionResultsOnTypedFragments
+    implements
+        Built<GSearchWithUnionResultsOnTypedFragments,
+            GSearchWithUnionResultsOnTypedFragmentsBuilder> {
+  GSearchWithUnionResultsOnTypedFragments._();
+
+  factory GSearchWithUnionResultsOnTypedFragments(
+      [Function(GSearchWithUnionResultsOnTypedFragmentsBuilder b)
+          updates]) = _$GSearchWithUnionResultsOnTypedFragments;
+
+  static void _initializeBuilder(
+          GSearchWithUnionResultsOnTypedFragmentsBuilder b) =>
+      b
+        ..operation = _i1.Operation(
+          document: _i2.document,
+          operationName: 'SearchWithUnionResultsOnTypedFragments',
+        );
+  _i3.GSearchWithUnionResultsOnTypedFragmentsVars get vars;
+  _i1.Operation get operation;
+  static Serializer<GSearchWithUnionResultsOnTypedFragments> get serializer =>
+      _$gSearchWithUnionResultsOnTypedFragmentsSerializer;
+  Map<String, dynamic> toJson() => (_i4.serializers.serializeWith(
+        GSearchWithUnionResultsOnTypedFragments.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GSearchWithUnionResultsOnTypedFragments? fromJson(
+          Map<String, dynamic> json) =>
+      _i4.serializers.deserializeWith(
+        GSearchWithUnionResultsOnTypedFragments.serializer,
+        json,
+      );
+}

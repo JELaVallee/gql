@@ -9,6 +9,16 @@ part of 'search_with_union_results.var.gql.dart';
 Serializer<GSearchWithUnionResultsVars>
     _$gSearchWithUnionResultsVarsSerializer =
     new _$GSearchWithUnionResultsVarsSerializer();
+Serializer<GSearchWithUnionResultsOnTypedFragmentsVars>
+    _$gSearchWithUnionResultsOnTypedFragmentsVarsSerializer =
+    new _$GSearchWithUnionResultsOnTypedFragmentsVarsSerializer();
+Serializer<GhumanFieldsFragmentVars> _$ghumanFieldsFragmentVarsSerializer =
+    new _$GhumanFieldsFragmentVarsSerializer();
+Serializer<GdroidFieldsFragmentVars> _$gdroidFieldsFragmentVarsSerializer =
+    new _$GdroidFieldsFragmentVarsSerializer();
+Serializer<GstarshipFieldsFragmentVars>
+    _$gstarshipFieldsFragmentVarsSerializer =
+    new _$GstarshipFieldsFragmentVarsSerializer();
 
 class _$GSearchWithUnionResultsVarsSerializer
     implements StructuredSerializer<GSearchWithUnionResultsVars> {
@@ -52,6 +62,127 @@ class _$GSearchWithUnionResultsVarsSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GSearchWithUnionResultsOnTypedFragmentsVarsSerializer
+    implements
+        StructuredSerializer<GSearchWithUnionResultsOnTypedFragmentsVars> {
+  @override
+  final Iterable<Type> types = const [
+    GSearchWithUnionResultsOnTypedFragmentsVars,
+    _$GSearchWithUnionResultsOnTypedFragmentsVars
+  ];
+  @override
+  final String wireName = 'GSearchWithUnionResultsOnTypedFragmentsVars';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GSearchWithUnionResultsOnTypedFragmentsVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'text',
+      serializers.serialize(object.text, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GSearchWithUnionResultsOnTypedFragmentsVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GSearchWithUnionResultsOnTypedFragmentsVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'text':
+          result.text = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GhumanFieldsFragmentVarsSerializer
+    implements StructuredSerializer<GhumanFieldsFragmentVars> {
+  @override
+  final Iterable<Type> types = const [
+    GhumanFieldsFragmentVars,
+    _$GhumanFieldsFragmentVars
+  ];
+  @override
+  final String wireName = 'GhumanFieldsFragmentVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GhumanFieldsFragmentVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GhumanFieldsFragmentVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GhumanFieldsFragmentVarsBuilder().build();
+  }
+}
+
+class _$GdroidFieldsFragmentVarsSerializer
+    implements StructuredSerializer<GdroidFieldsFragmentVars> {
+  @override
+  final Iterable<Type> types = const [
+    GdroidFieldsFragmentVars,
+    _$GdroidFieldsFragmentVars
+  ];
+  @override
+  final String wireName = 'GdroidFieldsFragmentVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GdroidFieldsFragmentVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GdroidFieldsFragmentVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GdroidFieldsFragmentVarsBuilder().build();
+  }
+}
+
+class _$GstarshipFieldsFragmentVarsSerializer
+    implements StructuredSerializer<GstarshipFieldsFragmentVars> {
+  @override
+  final Iterable<Type> types = const [
+    GstarshipFieldsFragmentVars,
+    _$GstarshipFieldsFragmentVars
+  ];
+  @override
+  final String wireName = 'GstarshipFieldsFragmentVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GstarshipFieldsFragmentVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GstarshipFieldsFragmentVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GstarshipFieldsFragmentVarsBuilder().build();
   }
 }
 
@@ -136,6 +267,287 @@ class GSearchWithUnionResultsVarsBuilder
         new _$GSearchWithUnionResultsVars._(
             text: BuiltValueNullFieldError.checkNotNull(
                 text, r'GSearchWithUnionResultsVars', 'text'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSearchWithUnionResultsOnTypedFragmentsVars
+    extends GSearchWithUnionResultsOnTypedFragmentsVars {
+  @override
+  final String text;
+
+  factory _$GSearchWithUnionResultsOnTypedFragmentsVars(
+          [void Function(GSearchWithUnionResultsOnTypedFragmentsVarsBuilder)?
+              updates]) =>
+      (new GSearchWithUnionResultsOnTypedFragmentsVarsBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GSearchWithUnionResultsOnTypedFragmentsVars._({required this.text})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        text, r'GSearchWithUnionResultsOnTypedFragmentsVars', 'text');
+  }
+
+  @override
+  GSearchWithUnionResultsOnTypedFragmentsVars rebuild(
+          void Function(GSearchWithUnionResultsOnTypedFragmentsVarsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSearchWithUnionResultsOnTypedFragmentsVarsBuilder toBuilder() =>
+      new GSearchWithUnionResultsOnTypedFragmentsVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GSearchWithUnionResultsOnTypedFragmentsVars &&
+        text == other.text;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, text.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GSearchWithUnionResultsOnTypedFragmentsVars')
+          ..add('text', text))
+        .toString();
+  }
+}
+
+class GSearchWithUnionResultsOnTypedFragmentsVarsBuilder
+    implements
+        Builder<GSearchWithUnionResultsOnTypedFragmentsVars,
+            GSearchWithUnionResultsOnTypedFragmentsVarsBuilder> {
+  _$GSearchWithUnionResultsOnTypedFragmentsVars? _$v;
+
+  String? _text;
+  String? get text => _$this._text;
+  set text(String? text) => _$this._text = text;
+
+  GSearchWithUnionResultsOnTypedFragmentsVarsBuilder();
+
+  GSearchWithUnionResultsOnTypedFragmentsVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _text = $v.text;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GSearchWithUnionResultsOnTypedFragmentsVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSearchWithUnionResultsOnTypedFragmentsVars;
+  }
+
+  @override
+  void update(
+      void Function(GSearchWithUnionResultsOnTypedFragmentsVarsBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSearchWithUnionResultsOnTypedFragmentsVars build() => _build();
+
+  _$GSearchWithUnionResultsOnTypedFragmentsVars _build() {
+    final _$result = _$v ??
+        new _$GSearchWithUnionResultsOnTypedFragmentsVars._(
+            text: BuiltValueNullFieldError.checkNotNull(
+                text, r'GSearchWithUnionResultsOnTypedFragmentsVars', 'text'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GhumanFieldsFragmentVars extends GhumanFieldsFragmentVars {
+  factory _$GhumanFieldsFragmentVars(
+          [void Function(GhumanFieldsFragmentVarsBuilder)? updates]) =>
+      (new GhumanFieldsFragmentVarsBuilder()..update(updates))._build();
+
+  _$GhumanFieldsFragmentVars._() : super._();
+
+  @override
+  GhumanFieldsFragmentVars rebuild(
+          void Function(GhumanFieldsFragmentVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GhumanFieldsFragmentVarsBuilder toBuilder() =>
+      new GhumanFieldsFragmentVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GhumanFieldsFragmentVars;
+  }
+
+  @override
+  int get hashCode {
+    return 101332054;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GhumanFieldsFragmentVars').toString();
+  }
+}
+
+class GhumanFieldsFragmentVarsBuilder
+    implements
+        Builder<GhumanFieldsFragmentVars, GhumanFieldsFragmentVarsBuilder> {
+  _$GhumanFieldsFragmentVars? _$v;
+
+  GhumanFieldsFragmentVarsBuilder();
+
+  @override
+  void replace(GhumanFieldsFragmentVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GhumanFieldsFragmentVars;
+  }
+
+  @override
+  void update(void Function(GhumanFieldsFragmentVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GhumanFieldsFragmentVars build() => _build();
+
+  _$GhumanFieldsFragmentVars _build() {
+    final _$result = _$v ?? new _$GhumanFieldsFragmentVars._();
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GdroidFieldsFragmentVars extends GdroidFieldsFragmentVars {
+  factory _$GdroidFieldsFragmentVars(
+          [void Function(GdroidFieldsFragmentVarsBuilder)? updates]) =>
+      (new GdroidFieldsFragmentVarsBuilder()..update(updates))._build();
+
+  _$GdroidFieldsFragmentVars._() : super._();
+
+  @override
+  GdroidFieldsFragmentVars rebuild(
+          void Function(GdroidFieldsFragmentVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GdroidFieldsFragmentVarsBuilder toBuilder() =>
+      new GdroidFieldsFragmentVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GdroidFieldsFragmentVars;
+  }
+
+  @override
+  int get hashCode {
+    return 244025792;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GdroidFieldsFragmentVars').toString();
+  }
+}
+
+class GdroidFieldsFragmentVarsBuilder
+    implements
+        Builder<GdroidFieldsFragmentVars, GdroidFieldsFragmentVarsBuilder> {
+  _$GdroidFieldsFragmentVars? _$v;
+
+  GdroidFieldsFragmentVarsBuilder();
+
+  @override
+  void replace(GdroidFieldsFragmentVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GdroidFieldsFragmentVars;
+  }
+
+  @override
+  void update(void Function(GdroidFieldsFragmentVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GdroidFieldsFragmentVars build() => _build();
+
+  _$GdroidFieldsFragmentVars _build() {
+    final _$result = _$v ?? new _$GdroidFieldsFragmentVars._();
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GstarshipFieldsFragmentVars extends GstarshipFieldsFragmentVars {
+  factory _$GstarshipFieldsFragmentVars(
+          [void Function(GstarshipFieldsFragmentVarsBuilder)? updates]) =>
+      (new GstarshipFieldsFragmentVarsBuilder()..update(updates))._build();
+
+  _$GstarshipFieldsFragmentVars._() : super._();
+
+  @override
+  GstarshipFieldsFragmentVars rebuild(
+          void Function(GstarshipFieldsFragmentVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GstarshipFieldsFragmentVarsBuilder toBuilder() =>
+      new GstarshipFieldsFragmentVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GstarshipFieldsFragmentVars;
+  }
+
+  @override
+  int get hashCode {
+    return 562961421;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GstarshipFieldsFragmentVars')
+        .toString();
+  }
+}
+
+class GstarshipFieldsFragmentVarsBuilder
+    implements
+        Builder<GstarshipFieldsFragmentVars,
+            GstarshipFieldsFragmentVarsBuilder> {
+  _$GstarshipFieldsFragmentVars? _$v;
+
+  GstarshipFieldsFragmentVarsBuilder();
+
+  @override
+  void replace(GstarshipFieldsFragmentVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GstarshipFieldsFragmentVars;
+  }
+
+  @override
+  void update(void Function(GstarshipFieldsFragmentVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GstarshipFieldsFragmentVars build() => _build();
+
+  _$GstarshipFieldsFragmentVars _build() {
+    final _$result = _$v ?? new _$GstarshipFieldsFragmentVars._();
     replace(_$result);
     return _$result;
   }
