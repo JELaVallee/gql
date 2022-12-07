@@ -15,6 +15,35 @@ query SearchWithUnionResults($text: String!) {
   }
 }
 
+query SearchWithUnionResultsOnTypedFragments($text: String!) {
+  search(text: $text) {
+    ...on Human {
+      ...humanFieldsFragment
+    }
+    ...on Droid {
+      ...droidFieldsFragment
+    }
+    ...on Starship {
+      ...starshipFieldsFragment
+    }
+  }
+}
+
+fragment humanFieldsFragment on Human {
+    name
+    homePlanet
+}
+
+fragment droidFieldsFragment on Droid {
+    name
+    primaryFunction
+}
+
+fragment starshipFieldsFragment on Starship {
+    name
+    length
+}
+
 ## TODO: @JELaVallee - Add these in later...
 # fragment searchResultsFragment on SearchResult {
 #     ...on Human {
@@ -29,19 +58,4 @@ query SearchWithUnionResults($text: String!) {
 #         name
 #         length
 #     }
-# }
-
-# fragment humanFieldsFragment on Human {
-#     name
-#     homePlanet
-# }
-
-# fragment droidFieldsFragment on Droid {
-#     name
-#     primaryFunction
-# }
-
-# fragment starshipFieldsFragment on Starship {
-#     name
-#     length
 # }
