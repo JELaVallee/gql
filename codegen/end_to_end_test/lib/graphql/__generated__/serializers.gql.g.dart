@@ -53,6 +53,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GReviewWithDateData.serializer)
       ..add(GReviewWithDateData_createReview.serializer)
       ..add(GReviewWithDateVars.serializer)
+      ..add(GSearchWithUnionResults.serializer)
+      ..add(GSearchWithUnionResultsData.serializer)
+      ..add(GSearchWithUnionResultsData_search__asDroid.serializer)
+      ..add(GSearchWithUnionResultsData_search__asHuman.serializer)
+      ..add(GSearchWithUnionResultsData_search__asStarship.serializer)
+      ..add(GSearchWithUnionResultsData_search__base.serializer)
+      ..add(GSearchWithUnionResultsVars.serializer)
       ..add(GcomparisonFieldsData.serializer)
       ..add(GcomparisonFieldsData_friendsConnection.serializer)
       ..add(GcomparisonFieldsData_friendsConnection_edges.serializer)
@@ -106,6 +113,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GHeroWithFragmentsData_hero_friendsConnection_edges?>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType.nullable(GSearchWithUnionResultsData_search)
+          ]),
+          () => new ListBuilder<GSearchWithUnionResultsData_search?>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType.nullable(
